@@ -1,13 +1,16 @@
 import React from 'react';
 import {getRecord} from './mitraClipRecord';
+import {api} from "./config";
+
 
 export function SubmitRecord(){
     return(<input type="button" class="btn" value="submit" onClick={sendRecord}/>);
 }
 
 function sendRecord(){
-    fetch('http://localhost:8080/record', {
+    fetch(`${api}/record`, {
         method:'post',
+        credentials: 'include',
         headers: {
             'Content-Type': 'application/json'
           },

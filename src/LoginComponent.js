@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import logo from './IMCR-LOGO.png';
+import {api} from "./config";
 
 const cookies = require('browser-cookies');
 
@@ -40,7 +41,7 @@ export default class Login extends Component {
 
 
     login() {
-        fetch(`http://localhost:8080/login?username=${this.state.email}&password=${this.state.password}`)
+        fetch(`${api}/login?username=${this.state.email}&password=${this.state.password}`)
             .then((res) => {
                 if (res.status === 401) {
                     throw new Error();
