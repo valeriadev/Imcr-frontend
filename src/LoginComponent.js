@@ -87,7 +87,7 @@ export default class Login extends Component {
                             <input id="email" type="email" name="email" onChange={this.emailChanged}/>
                             <label for="pass"> Password: </label>
                             <input id="pass" type="password" name="psw" onChange={this.passwordChanged}/>
-                            <input type="button" class="btn" value="Login" onClick={this.login}/>
+                            <button style={{"width":"100%"}} class="btn btn-primary"  onClick={this.login}>Login</button>
                         </div>
                     </div>
                 </section>

@@ -237,6 +237,10 @@ h3{text-align:center}
 }
 
 .IMCRField  input{
-    margin-left: 6.5em
+    width:100%;
+}
 
+
+.IMCRField  textarea{
+    width:100%;
 }

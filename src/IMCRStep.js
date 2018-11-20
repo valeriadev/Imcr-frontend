@@ -67,8 +67,8 @@ export default class IMCRStep extends Component {
 
 
     render() {
-        return (<div>
-               <nav> 
+        return (<div >
+               <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
                     {this.createNavigationBar()}
                 </nav>
              <div class="card">   
@@ -77,15 +77,17 @@ export default class IMCRStep extends Component {
                 ref={form => this.form = form} >
                 {this.props.children}
             </form>
-            <p>{this.props.currentStep} / {this.props.totalSteps}</p>
 
-                {this.props.currentStep > 1 ? <p><button onClick={this.props.previousStep}>Previous Step</button></p> : null}
-                {this.props.currentStep < this.props.totalSteps ? <p><button onClick={this.validateForm}>Next Step</button></p> : null}
+                {this.props.currentStep > 1 ? <button class="btn btn-info" style={{"width":"100%"}} onClick={this.props.previousStep}>Previous Step</button>: null}
+                {this.props.currentStep < this.props.totalSteps ? <button style={{"width":"100%"}} class="btn btn-primary" onClick={this.validateForm}>Next Step</button> : null}
+
 
                 {this.props.currentStep === this.props.totalSteps ? <SubmitRecord></SubmitRecord>
                     : null}
 
-                <p><button class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onClick={() => this.props.goToStep(17)}>Step 17</button></p>
+            <p class="text-center">{this.props.currentStep} / {this.props.totalSteps}</p>
+
+
       </div>
   </div>);
     }

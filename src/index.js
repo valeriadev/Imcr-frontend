@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import './style.css';
 import Login from './LoginComponent';
-import StepOne from './StepOneComponent';
 import FormWrapper from './formWrapperComponent';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 
 class App extends Component {
