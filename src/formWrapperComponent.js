@@ -30,6 +30,9 @@ export default class FormWrapper extends Component {
 
             for (let i = 0; i < inputFromStep.length; i++) {
                 let keyName = Object.keys(inputFromStep[i])[0];
+                if(inputFromStep[i][keyName].titleOnly === "true"){
+                    continue;
+                }
                 set(inputFromStep[i][keyName].name, this.emptyValue)
             }
         }
@@ -63,6 +66,8 @@ export default class FormWrapper extends Component {
         }
         else if (input[keyName].type === 'text') {
             return <IMCRTextarea {...input[keyName]}></IMCRTextarea>
+        } else if (input[keyName].titleOnly === "true") {
+            return <h5>{keyName}</h5>
         }
 
     }
