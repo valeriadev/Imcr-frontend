@@ -68,11 +68,7 @@ export default class FormWrapper extends Component {
     }
 
     render() {
-        console.log(this.state.steps);
         return (<div>
-
-
-
             <section>
                 <StepWizard initialStep={1}>
 
