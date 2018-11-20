@@ -69,6 +69,7 @@
     {
       "Gender":{
         "label":"Gender ",
+        "name":"Gender",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"gender", "value":"0", "label": " Male "},
@@ -125,6 +126,7 @@
     {
       "Hypertension":{
         "label":"Hypertension ",
+        "name":"Hypertension",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"hypertension", "value":"1", "label": " Yes "},
@@ -133,6 +135,7 @@
     {
       "DiabetesMellitus":{
         "label":"Diabetes Mellitus ",
+        "name":"DiabetesMellitus ",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"diabetesMellitus", "value":"1", "label": " Yes "},
@@ -141,6 +144,7 @@
     {
       "Dyslipidemia":{
         "label":"Dyslipidemia",
+        "name":"Dyslipidemia",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"dyslipidemia", "value":"1", "label": " Yes "},
@@ -149,6 +153,7 @@
     {
       "Smoker":{
         "label":"Smoker ",
+        "name":"Smoker",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"smoker", "value":"1", "label": " Yes "},
@@ -157,6 +162,7 @@
     {
       "COPD":{
         "label":"COPD ",
+        "name":"COPD",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"copd", "value":"1", "label": " Yes "},
@@ -165,6 +171,7 @@
     {
       "ObstructiveSleepApnea":{
         "label":"Obstructive Sleep Apnea",
+        "name":"ObstructiveSleepApnea",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"obstructiveSleepApnea", "value":"1", "label": " Yes "},
@@ -173,6 +180,7 @@
     {
       "PastCVAorTIA":{
         "label":"Stroke (CVA or TIA)",
+        "name":"Stroke",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"pastCVAorTIA", "value":"1", "label": " Yes "},
@@ -181,6 +189,7 @@
     {
       "CAD":{
         "label":"Coronary Artery disease",
+        "name":"CoronaryArterydisease",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"cad", "value":"1", "label": " Yes "},
@@ -189,6 +198,7 @@
     {
       "PastPCI":{
         "label":"PCI",
+        "name":"PCI",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"pastPCI", "value":"1", "label": " Yes "},
@@ -197,6 +207,7 @@
     {
       "PastMI":{
         "label":"Myocardial Infaction",
+        "name":"MyocardialInfaction",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"pastMI", "value":"1", "label": " Yes "},
@@ -243,6 +254,7 @@
     {
       "OncologicDisease":{
         "label":"Oncologic disease",
+        "name":"Oncologicdisease",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"OncologicDisease", "value":"1", "label": " Yes "},
@@ -255,6 +267,7 @@
     {
       "PreviousMitraClipBoolean":{
         "label":"Previous MitraClip",
+        "name":"PreviousMitraClip",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"previousMitraClip", "value":"1", "label": " Yes "},
@@ -289,6 +302,7 @@
     {
       "RecentCardiogenicShock":{
         "label":"Recent Cardiogenic shock (within 30 days)",
+        "name":"RecentCardiogenicShock",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"recentCardiogenicShock", "value":"1", "label": " Yes "},
@@ -297,6 +311,7 @@
     {
       "RecentAcuteMI":{
         "label":"Recent Acute MI (within 90 days)",
+        "name":"RecentAcuteMI",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"recentAcuteMI", "value":"1", "label": " Yes "},
@@ -305,6 +320,7 @@
     {
       "RecentPCI":{
         "label":"Recent PCI (within 30 days)",
+        "name":"RecentPCI",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"recentPCI", "value":"1", "label": " Yes "},
@@ -313,6 +329,7 @@
     {
       "RecentHFHospitalization":{
         "label":"Recent HF hospitaliztion (within 30 days)",
+        "name":"RecentHFHospitaliztion",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"recentHFHospitalization", "value":"1", "label": " Yes "},
@@ -428,6 +445,7 @@
     {
       "Antiplatelets":{
         "label":"Antipleteles",
+        "name":"Antipleteles",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"antiplatelets", "value":"1", "label": " Yes "},
@@ -436,6 +454,7 @@
     {
       "Anticoagulants":{
         "label":"Anticoagulants",
+        "name":"Anticoagulants",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"anticoagulants", "value":"1", "label": " Yes "},
@@ -444,6 +463,7 @@
     {
       "ACE_I_ARB":{
         "label":"ACE-I / ARB",
+        "name":"ACE-I_ARB",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"ace_I_ARB", "value":"1", "label": " Yes "},
@@ -452,6 +472,7 @@
     {
       "Beta_blockers":{
         "label":"Beta blockers",
+        "name":"BetaBlockers",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"betaBlockers", "value":"1", "label": " Yes "},
@@ -460,6 +481,7 @@
     {
       "AntiMineralocorticoids":{
         "label":"Anti Mineralocorticoids",
+        "name":"AntiMineralocorticoids",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"AntiMineralocorticoids", "value":"1", "label": " Yes "},
@@ -468,6 +490,7 @@
     {
       "Digoxin":{
         "label":"Digoxin",
+        "name":"Digoxin",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"digoxin", "value":"1", "label": " Yes "},
@@ -476,6 +499,7 @@
     {
       "PulmonaryVasodilators":{
         "label":"Pulmonary Vasodilators",
+        "name":"PulmonaryVasodilators",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"pulmonaryVasodilators", "value":"1", "label": " Yes "},
@@ -484,6 +508,7 @@
     {
       "FusidPerOs":{
         "label":"Fusid (per os)",
+        "name":"Fusid_per_os",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"fusidPerOs", "value":"1", "label": " Yes "},
@@ -501,6 +526,7 @@
     {
       "FusidIvDaycare":{
         "label":"Fusid (IV)",
+        "name":"Fusid_IV",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"fusidIvDaycare", "value":"1", "label": " Yes "},
@@ -693,6 +719,7 @@
       {
         "MitralAnulusCacification":{
           "label":"Mitral anulus cacification",
+          "name":"MitralAnulusCacification",
           "type":"radio",
           "inputs":
           [{"type":"radio", "name":"MitralAnulusCacification", "value":"1", "label": " Yes "},
@@ -763,6 +790,7 @@
     {
       "AorticStenosisPresent":{
         "label":"Aortic stenosis present",
+        "name":"AorticStenosisPresent",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"AorticStenosisPresent", "value":"1", "label": " Yes "},
@@ -942,6 +970,7 @@
             {
               "ASDpresent":{
                 "label":"ASD present",
+                "name":"ASDPresent",
                 "type":"radio",
                 "inputs":
                 [{"type":"radio", "name":"ASDpresent", "value":"1", "label": " Yes "},
@@ -1074,6 +1103,7 @@
             {
               "ASD_PFO":{
                 "label":"Post-procedure ASD/PFO",
+                "name":"Post-procedure-ASD-PFO",
                 "type":"radio",
                 "inputs":
                 [{"type":"radio", "name":"ASD_PFO", "value":"1", "label": " Yes "},
@@ -1281,6 +1311,7 @@
   {
     "ASD":{
       "label":"Atrial septal defect",
+      "name":"AtrialSeptalDefect",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"ASD", "value":"1", "label": " Yes "},
@@ -1342,6 +1373,7 @@
     {
       "AsdPfo":{
         "label":"ASD/PFO",
+        "name":"ASD-PFO",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"AsdPfo", "value":"1", "label": " Yes "},
@@ -1405,6 +1437,7 @@
       },
       {"Left Main stenosis >40%":{
         "label":"Left Main stenosis >40%",
+        "name":"LeftMainStenosis",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"LeftMainstenosis", "value":"1", "label": " Yes "},
@@ -1412,6 +1445,7 @@
       },
       {"LAD stenosis > 50%":{
         "label":"LAD stenosis > 50%",
+        "name":"LADStenosis",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"LADstenosis", "value":"1", "label": " Yes "},
@@ -1419,6 +1453,7 @@
       },
       {"LCX stenosis > 50%":{
         "label":"LCX stenosis > 50%",
+        "name":"LCXStenosis",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"LCXstenosis", "value":"1", "label": " Yes "},
@@ -1426,6 +1461,7 @@
       },
       {"RCA stenosis > 50%":{
         "label":"RCA stenosis > 50%",
+        "name":"RCAStenosis",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"RCAstenosis", "value":"1", "label": " Yes "},
@@ -1433,6 +1469,7 @@
       },
       {"Past CABG":{
         "label":"Past CABG",
+        "name":"PastCABG",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"PastCABG", "value":"1", "label": " Yes "},
@@ -1517,6 +1554,7 @@
           },
           {"AbortionOfProcedure":{
             "label":"Abortion of procedure",
+            "name":"AbortionOfProcedure",
             "type":"radio",
             "inputs":
             [{"type":"radio", "name":"AbortionOfProcedure", "value":"1", "label": " Yes "},
@@ -1524,6 +1562,7 @@
           },
           {"ConcomitantProcedures":{
             "label":"Concomitant procedures preformed",
+            "name":"ConcomitantProceduresPreformed",
             "type":"radio",
             "inputs":
             [{"type":"radio", "name":"ConcomitantProcedures", "value":"1", "label": " Yes "},
@@ -1621,8 +1660,9 @@
                       {"value":"Stroke","key":"6"}]}
                 },
                    {"OtherCardiacProcedures":{
-                  "label":"Other cardiac procedures",
-                  "type":"radio",
+                    "label":"Other cardiac procedures",
+                    "name":"OtherCardiacProcedures",
+                    "type":"radio",
                   "inputs":
                   [{"type":"radio", "name":"OtherCardiacProcedures", "value":"1", "label": " Yes "},
                     {"type":"radio", "name":"OtherCardiacProcedures", "value":"0", "label":" No "}]}
@@ -1651,6 +1691,7 @@
       },
     {"DischargeStatus":{
       "label":"Discharge status",
+      "name":"DischargeStatus",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"DischargeStatus", "value":"1", "label": " Stable "},
@@ -1685,6 +1726,7 @@
     },
     {"Packed cells":{
       "label":"Packed cells",
+      "name":"PackedCells",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"Packedcells", "value":"1", "label": " Stable "},
@@ -1692,6 +1734,7 @@
     },
     {"ProlongedIntubation":{
       "label":"Prolonged intubation (>48 hours)?",
+      "name":"ProlongedIntubation",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"ProlongedIntubation", "value":"1", "label": " Yes "},
@@ -1699,6 +1742,7 @@
     },
     {"HemodynamicSupport":{
       "label":"Hemodynamic support after procedure (>24 hours)?",
+      "name":"HemodynamicSupportAfterProcedure",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"HemodynamicSupport", "value":"1", "label": " Yes "},
@@ -1731,6 +1775,7 @@
           
           {"Anticoagulants":{
             "label":"Anticoagulants",
+            "name":"Anticoagulants",
             "type":"radio",
             "inputs":
             [{"type":"radio", "name":"Anticoagulants", "value":"1", "label": " Yes "},
@@ -1738,6 +1783,7 @@
           },
           {"ACE_I_ARB":{
             "label":"ACE-I / ARB",
+            "name":"ACE-I-ARB",
             "type":"radio",
             "inputs":
             [{"type":"radio", "name":"ACE_I_ARB", "value":"1", "label": " Yes "},
@@ -1745,6 +1791,7 @@
           },
           {"BetaBlockers":{
             "label":"Beta blockers",
+            "name":"Betablockers_2",
             "type":"radio",
             "inputs":
             [{"type":"radio", "name":"BetaBlockers", "value":"1", "label": " Yes "},
@@ -1752,6 +1799,7 @@
           },
           {"Digoxin":{
             "label":"Digoxin",
+            "name":"Digoxin_2",
             "type":"radio",
             "inputs":
             [{"type":"radio", "name":"Digoxin", "value":"1", "label": " Yes "},
@@ -1759,6 +1807,7 @@
           },
           {"FusidPerOs":{
             "label":"Fusid per os",
+            "name":"Fusidperos_2",
             "type":"radio",
             "inputs":
             [{"type":"radio", "name":"FusidPerOs", "value":"1", "label": " Yes "},
@@ -1774,6 +1823,7 @@
           },
           {"FusidIVDaycare":{
             "label":"IV Fusid",
+            "label":"IV_Fusid_2",
             "type":"radio",
             "inputs":
             [{"type":"radio", "name":"FusidIVDaycare", "value":"1", "label": " Yes "},
@@ -1792,6 +1842,7 @@
   "Mortality":[
     {"Alive":{
       "label":"Patient Alive",
+      "name":"Patient_Alive",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"Alive", "value":"1", "label": " Yes "},
@@ -1815,6 +1866,7 @@
     },	
     {"Procedural mortality":{
       "label":"Procedural mortality",
+      "name":"Procedural_mortality",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"ProceduralMortality", "value":"1", "label": " Yes "},
@@ -1822,6 +1874,7 @@
     },
     {"Post-Procedure but in-hospital cardiovascular mortality":{
       "label":"Post-procedure but in-hospital cardiovascular mortality",
+      "name":"Post-procedure-but-in-hospital-cardiovascular-mortality",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"PostProcedureButInHospitalCardiovascularMortality", "value":"1", "label": " Yes "},
@@ -1829,6 +1882,7 @@
     },
     {"Post-procedure but in-hospital non-cardiovascular mortality":{
       "label":"Post-procedure but in-hospital non-cardiovascular mortality",
+      "name":"Post-procedure-but-in-hospital-non-cardiovascular-mortality",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"PostProcedureButInHospitalNonCardiovascularMortality", "value":"1", "label": " Yes "},
@@ -1836,6 +1890,7 @@
     },
     {"Out of hospital  Cardiovascular mortality":{
       "label":"Out of hospital  Cardiovascular mortality",
+      "name":"Out-of-hospital-Cardiovascular-mortality",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"OutOfHospitalCardiovascularMortality", "value":"1", "label": " Yes "},
@@ -1843,6 +1898,7 @@
     },
     {"Out of hospital non-cardiovascular mortality":{
       "label":"Out of hospital non-cardiovascular mortality",
+      "name":"Out-of-hospital-non-cardiovascular-mortality",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"OutOfHospitalNonCardiovascularMortality", "value":"1", "label": " Yes "},
@@ -1850,6 +1906,7 @@
     },
     {"Out of hospital Unknown mortality":{
       "label":"Out of hospital Unknown mortality",
+      "name":"Out-of-hospital-Unknown-mortality",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"OutOfHospitalUnknownMortality", "value":"1", "label": " Yes "},
