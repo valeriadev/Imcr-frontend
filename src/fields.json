@@ -1392,102 +1392,92 @@
       "Left heart Cath:":{
         "titleOnly":"true"
       }},
-    {
-      "NumberVesselInvolved": {
-        "label": "Number of vessels involved",
-        "type": "number",
-        "name": "NumberVesselIisease",
-        "min": "0",
-        "max": "20"
-      }
-    },
-    {"LmStenosis":{
-      "label":"Left Main stenosis >40% ",
-      "type":"radio",
-      "inputs":
-      [{"type":"radio", "name":"LmStenosis", "value":"1", "label": " Yes "},
-        {"type":"radio", "name":"LmStenosis", "value":"0", "label":" No "}]}
-    },
-    {"Ladstenosis":{
-      "label":"LAD stenosis > 50%",
-      "type":"radio",
-      "inputs":
-      [{"type":"radio", "name":"Ladstenosis", "value":"1", "label": " Yes "},
-        {"type":"radio", "name":"Ladstenosis", "value":"0", "label":" No "}]}
-    },
-    {"LCXstenosis":{
-      "label":"LCX stenosis > 50%",
-      "type":"radio",
-      "inputs":
-      [{"type":"radio", "name":"LCXstenosis", "value":"1", "label": " Yes "},
-        {"type":"radio", "name":"LCXstenosis", "value":"0", "label":" No "}]}
-    },
-    {"RCAstenosis":{
-      "label":"RCA stenosis > 50%",
-      "type":"radio",
-      "inputs":
-      [{"type":"radio", "name":"RCAstenosis", "value":"1", "label": " Yes "},
-        {"type":"radio", "name":"RCAstenosis", "value":"0", "label":" No "}]}
-    },
-    {"sp_cabg":{
-      "label":"Past CABG",
-      "type":"radio",
-      "inputs":
-      [{"type":"radio", "name":"sp_cabg", "value":"1", "label": " Yes "},
-        {"type":"radio", "name":"sp_cabg", "value":"0", "label":" No "}]}
-    },
+      {"Left Main stenosis >40%":{
+        "label":"Left Main stenosis >40%",
+        "type":"radio",
+        "inputs":
+        [{"type":"radio", "name":"LeftMainstenosis", "value":"1", "label": " Yes "},
+          {"type":"radio", "name":"LeftMainstenosis", "value":"0", "label":" No "}]}
+      },
+      {"LAD stenosis > 50%":{
+        "label":"LAD stenosis > 50%",
+        "type":"radio",
+        "inputs":
+        [{"type":"radio", "name":"LADstenosis", "value":"1", "label": " Yes "},
+          {"type":"radio", "name":"LADstenosis", "value":"0", "label":" No "}]}
+      },
+      {"LCX stenosis > 50%":{
+        "label":"LCX stenosis > 50%",
+        "type":"radio",
+        "inputs":
+        [{"type":"radio", "name":"LCXstenosis", "value":"1", "label": " Yes "},
+          {"type":"radio", "name":"LCXstenosis", "value":"0", "label":" No "}]}
+      },
+      {"RCA stenosis > 50%":{
+        "label":"RCA stenosis > 50%",
+        "type":"radio",
+        "inputs":
+        [{"type":"radio", "name":"RCAstenosis", "value":"1", "label": " Yes "},
+          {"type":"radio", "name":"RCAstenosis", "value":"0", "label":" No "}]}
+      },
+      {"Past CABG":{
+        "label":"Past CABG",
+        "type":"radio",
+        "inputs":
+        [{"type":"radio", "name":"PastCABG", "value":"1", "label": " Yes "},
+          {"type":"radio", "name":"PastCABG", "value":"0", "label":" No "}]}
+      },
     {
       "Right heart Cath:":{
         "titleOnly":"true"
       }},
-
-    {
-      "LAPmean": {
-        "label": "LAP mean (mmHg)",
-        "type": "number",
-        "name": "LAPmean",
-        "min": "0",
-        "max": "200"
-      }
-    },
-    {"vWave":{
-      "label":"V wave (mmhm)",
-      "type": "number",
-      "name": "vWave",
-      "min": "0",
-      "max": "200"
-    }},
-    {
-      "meanPA": {
-        "label": "Mean PA (mmhm)",
-        "type": "number",
-        "name": "meanPA",
-        "min": "0",
-        "max": "200"
-      }
-    },
-    {
-      "Notes":{
-        "label":"Notes",
-        "rows" : "5",
-        "cols" : "60",
-        "type":"text",
-        "name" : "notes",
-        "placeholder":"Free text"}
-    }
-  ],
-  "Periprocedural data":[
+      {
+        "PCWP": {
+          "label": "PCWP (mmgh)",
+          "type": "number",
+          "name": "PCWP",
+          "min": "0",
+          "max": "100",
+          "placeholder": " [ 0 - 100 ]"
+        }},
+        {"vWave":{
+          "label":"V wave (mmhg)",
+          "type": "number",
+          "name": "vWave",
+          "min": "0",
+          "max": "100"
+        }},
+        {
+          "PAPressures": {
+            "label": "PA Pressures (mmhg)",
+            "type": "number",
+            "name": "PAPressures",
+            "min": "0",
+            "max": "150"
+          }
+        },
+        {
+          "Notes":{
+            "label":"Notes",
+            "rows" : "5",
+            "cols" : "60",
+            "type":"text",
+            "name" : "notes",
+            "placeholder":"Free text"}
+        }
+      ], 
+    "Periprocedural data":[
     {
       "VascularAccessVein": {
         "label": "Vascular access- vein",
         "list": "VascularAccessVein",
         "name": "VascularAccessVein",
         "type":"list",
-        "placeholder":" Select from a list:  Right femoral vein / Others ",
-
+        "placeholder":" Select from a list:  Right femoral vein / Left femoral vein /Others ",
         "inputs": [
           {"value":"Right femoral vein","key":"1"},
-          {"value":"Others","key":"2"}]
+          {"value":"Left femoral vein","key":"2"},
+          {"value":"Others","key":"3"}]
         }
       },
       {
@@ -1496,7 +1486,7 @@
           "type": "number",
           "name": "NumbersOfClipsImplanted",
           "min": "0",
-          "max": "100"
+          "max": "10"
         }
       },
       {
@@ -1522,7 +1512,7 @@
               {"type":"radio", "name":"AbortionOfProcedure", "value":"0", "label":" No "}]}
           },
           {"ConcomitantProcedures":{
-            "label":"Concomitant procedures",
+            "label":"Concomitant procedures preformed",
             "type":"radio",
             "inputs":
             [{"type":"radio", "name":"ConcomitantProcedures", "value":"1", "label": " Yes "},
@@ -1530,7 +1520,7 @@
           },
           {
             "Concomitant procedures if yes description":{
-              "label":"Concomitant procedures if yes description",
+              "label":"Details",
               "rows" : "5",
               "cols" : "60",
               "type":"text",
@@ -1541,8 +1531,8 @@
               "label": "Pre-procedure Systolic blood pressure",
               "type": "number",
               "name": "PreProcedureSystolicBloodPressure",
-              "min": "0",
-              "max": "280"
+              "min": "20",
+              "max": "250"
             }
           },
           {
@@ -1550,8 +1540,8 @@
               "label": "Pre-procedure Diastolic blood pressure",
               "type": "number",
               "name": "PreProcedureDiastolicBloodPressure",
-              "min": "0",
-              "max": "280"
+              "min": "20",
+              "max": "250"
             }
           },
           {"preProcedureVWave":{
@@ -1559,15 +1549,12 @@
             "type": "number",
             "name": "preProcedureVWave",
             "min": "0",
-            "max": "200"
+            "max": "100"
           }},
-          {"postProcedureVWave":{
-            "label":"Post-procedure V-wave (mmhm)",
-            "type": "number",
-            "name": "postProcedureVWave",
-            "min": "0",
-            "max": "200"
-          }},
+          {
+            "End procedure:":{
+              "titleOnly":"true"
+            }},
           {
             "PostProcedureSystolicBloodPressure": {
               "label": "Post-procedure Systolic blood pressure",
@@ -1586,6 +1573,14 @@
               "max": "280"
             }
           },
+
+          {"postProcedureVWave":{
+            "label":"Post-procedure V-wave (mmhm)",
+            "type": "number",
+            "name": "postProcedureVWave",
+            "min": "0",
+            "max": "100"
+          }},
           {
             "PeriProcedureComplications": {
               "label": "Peri-procedure complications",
@@ -1631,6 +1626,18 @@
                 }
   ],
   "Postprocedural Data":[
+    {
+      "Dischrage data:":{
+        "titleOnly":"true"
+      }},
+      {
+        "DischargeDate":{
+          "label": "Discharge date (D/M/Y)",
+          "type":"date",
+          "name":"DischargeDate",
+          "min":"2011-01-01"
+        }
+      },
     {"DischargeStatus":{
       "label":"Discharge status",
       "type":"radio",
@@ -1638,45 +1645,9 @@
       [{"type":"radio", "name":"DischargeStatus", "value":"1", "label": " Stable "},
         {"type":"radio", "name":"DischargeStatus", "value":"0", "label":" Decreased "}]}
     },
-    {"Complications":{
-      "label":"Complications",
-      "type":"radio",
-      "inputs":
-      [{"type":"radio", "name":"Complications", "value":"1", "label": " Yes "},
-        {"type":"radio", "name":"Complications", "value":"0", "label":" No "}]}
-    },
-    {
-      "ComplicationsNote":{
-        "label":"Complications",
-        "rows" : "5",
-        "cols" : "60",
-        "type":"text",
-        "name" : "ComplicationsNote"}
-    },
-    {"IntraPostProcedurePRBC":{
-      "label":"Intra/post procedure PRBC",
-      "type":"radio",
-      "inputs":
-      [{"type":"radio", "name":"IntraPostProcedurePRBC", "value":"1", "label": " Yes "},
-        {"type":"radio", "name":"IntraPostProcedurePRBC", "value":"0", "label":" No "}]}
-    },
-    {"ProlongedIntubation":{
-      "label":"Prolonged intubation",
-      "type":"radio",
-      "inputs":
-      [{"type":"radio", "name":"ProlongedIntubation", "value":"1", "label": " Yes "},
-        {"type":"radio", "name":"ProlongedIntubation", "value":"0", "label":" No "}]}
-    },
-    {"HemodynamicSupport":{
-      "label":"Hemodynamic support",
-      "type":"radio",
-      "inputs":
-      [{"type":"radio", "name":"HemodynamicSupport", "value":"1", "label": " Yes "},
-        {"type":"radio", "name":"HemodynamicSupport", "value":"0", "label":" No "}]}
-    },
     {
       "DaysInICUOrCCU": {
-        "label": "Days in ICU/CCU",
+        "label": "Total stay in CCU/ICU (Days)",
         "type": "number",
         "name": "DaysInICUOrCCU",
         "min": "0",
@@ -1684,33 +1655,56 @@
       }
     },
     {
-      "LegthOfHospitalizationPostClipsDays": {
-        "label": "Legth of hospitalization post clips, days",
+      "PostClipStayInCCUICUDays": {
+        "label": "Post clip stay in CCU/ICU (Days)",
         "type": "number",
-        "name": "LegthOfHospitalizationPostClipsDays",
+        "name": "PostClipStayInCCUICUDays",
         "min": "0",
         "max": "100"
       }
     },
     {
-      "DischargeDate":{
-        "label": "Discharge date (D/M/Y)",
-        "type":"date",
-        "name":"DischargeDate",
-        "min":"2011-01-01"
+      "TotalLengthOfHospitalizationPostClipDays": {
+        "label": "Total length of hospitalization, post clip (days)",
+        "type": "number",
+        "name": "TotalLengthOfHospitalizationPostClipDays",
+        "min": "0",
+        "max": "100"
       }
+    },
+    {"Packed cells":{
+      "label":"Packed cells",
+      "type":"radio",
+      "inputs":
+      [{"type":"radio", "name":"Packedcells", "value":"1", "label": " Stable "},
+        {"type":"radio", "name":"Packedcells", "value":"0", "label":" Decreased "}]}
+    },
+    {"ProlongedIntubation":{
+      "label":"Prolonged intubation (>48 hours)?",
+      "type":"radio",
+      "inputs":
+      [{"type":"radio", "name":"ProlongedIntubation", "value":"1", "label": " Yes "},
+        {"type":"radio", "name":"ProlongedIntubation", "value":"0", "label":" No "}]}
+    },
+    {"HemodynamicSupport":{
+      "label":"Hemodynamic support after procedure (>24 hours)?",
+      "type":"radio",
+      "inputs":
+      [{"type":"radio", "name":"HemodynamicSupport", "value":"1", "label": " Yes "},
+        {"type":"radio", "name":"HemodynamicSupport", "value":"0", "label":" No "}]}
+    },
+    {
+      "ComplicationsNote":{
+        "label":"Other Complications",
+        "rows" : "5",
+        "cols" : "60",
+        "type":"text",
+        "name" : "ComplicationsNote"}
     },
     {
       "Discharge Medications:":{
         "titleOnly":"true"
       }},
-    {"DischargeAnticoagulants":{
-      "label":"Discharge anticoagulants",
-      "type":"radio",
-      "inputs":
-      [{"type":"radio", "name":"DischargeAnticoagulants", "value":"1", "label": " Yes "},
-        {"type":"radio", "name":"DischargeAnticoagulants", "value":"0", "label":" No "}]}
-    },
     {
       "Antiplatelets": {
         "label": "Antiplatelets",
@@ -1768,25 +1762,11 @@
           }
           },
           {"FusidIVDaycare":{
-            "label":"Fusid IV daycare",
+            "label":"IV Fusid",
             "type":"radio",
             "inputs":
             [{"type":"radio", "name":"FusidIVDaycare", "value":"1", "label": " Yes "},
               {"type":"radio", "name":"FusidIVDaycare", "value":"0", "label":" No "}]}
-          },
-          {
-            "Disposition": {
-              "label": "MR Severity (Worst measured)",
-              "list": "MrSeverity",
-              "name": "MrSeverity",
-              "type":"list",
-              "placeholder":" Select from a list:  Home / Nursing home / Another hospital / Dead ",
-
-              "inputs": [
-                {"value":"Home","key":"1"},
-                {"value":"Nursing home","key":"2"},
-                {"value":"Another hospital","key":"3"},
-                {"value":"Dead","key":"4"}]}
           },
           {
             "Notes":{
@@ -1797,12 +1777,10 @@
               "name" : "notes",
               "placeholder":"Free text"}
           }
-
-
   ],
   "Mortality Data":[
     {"Alive":{
-      "label":"Alive",
+      "label":"Patient Alive",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"Alive", "value":"1", "label": " Yes "},
@@ -1818,7 +1796,7 @@
     },
     {
       "Last known FU":{
-        "label": "Last known follow up (D/M/Y)",
+        "label": "Last knon Follow up (for unknow status)",
         "type":"date",
         "name":"Last known FU",
         "min":"2017-01-01"
