@@ -57,7 +57,6 @@ export default class IMCRStep extends Component {
 
         const keys = Object.keys(fields);
         for (let i = 0; i < keys.length; i++) {
-            <li><a href="#">Link</a></li>
             arr.push(<li><a href="#" onClick={() => this.props.goToStep(i + 1)}>{keys[i]}</a></li>)
             // class="w3-bar-item w3-button w3-hover-white"
             //arr.push(<a href="#" onclick="this.props.goToStep(i+1)" class="w3-bar-item w3-button w3-hover-white">{keys[i]}</a> )
