@@ -6,7 +6,7 @@ const cookies = require('browser-cookies');
 
 
 export function SubmitRecord(){
-    return(<button class="btn" style={{"width":"160px"}} onClick={sendRecord}>submit</button>);
+    return(<button class="btn" style={{"width":"160px", "margin-top":".5em"}} onClick={sendRecord}>Submit</button>);
 }
 
 function sendRecord(){
@@ -21,8 +21,10 @@ function sendRecord(){
     }).then((res)=>{
         if(res.status===200){
             console.log("send record sucssefuly");
+            alert('Record has been sent')
         }
         else{
+            alert('opsss..... something went wrong')
             console.error("wrong send record");
         }
     })

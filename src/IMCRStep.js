@@ -92,19 +92,20 @@ export default class IMCRStep extends Component {
             </nav>
             <div className="card1">
                 <h3 style={{ "margin": "1em" }}>{this.props.stepName}</h3>
-                <form
+                <form class="step-form"
                     ref={form => this.form = form} >
                     {this.props.children}
                 </form>
 
-                {this.props.currentStep > 1 ? <button class="btn btn-info" style={{ "width": "160px" }} onClick={this.props.previousStep}>Previous Step</button> : null}
-                {this.props.currentStep < this.props.totalSteps ? <button style={{ "width": "160px" }} class="btn btn-primary" onClick={this.validateForm}>Next Step</button> : null}
+
+                {this.props.currentStep > 1 ? <button class="btn btn-info" style={{ "width": "160px", "margin-top":".5em" }} onClick={this.props.previousStep}>Previous Step</button> : null}
+                {this.props.currentStep < this.props.totalSteps ? <button style={{ "width": "160px", "margin-top":".5em" }} class="btn btn-primary" onClick={this.validateForm}>Next Step</button> : null}
 
 
                 {this.props.currentStep === this.props.totalSteps ? <SubmitRecord></SubmitRecord>
                     : null}
 
-                <p class="text-center">{this.props.currentStep} / {this.props.totalSteps}</p>
+                <p class="text-center" style={{"margin-top":".5em"}}>{this.props.currentStep} / {this.props.totalSteps}</p>
 
 
             </div>

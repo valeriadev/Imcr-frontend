@@ -29,7 +29,7 @@ export default class Login extends Component {
 
     passwordChanged(event) {
         console.log('passwordChanged: ' + event.target.value)
-        if (event.target.value.length >= 6) {
+        if (event.target.value.length >= 1) {
             this.setState({
                 password: event.target.value
             });
@@ -77,7 +77,7 @@ export default class Login extends Component {
                 </nav>
 
                 , <div className="top">
-                <img className="logo" src={logo} alt={"IMCR"}/>
+                <img className="logo-login" src={logo} alt={"IMCR"}/>
             </div>,
 
                 <section className="container">

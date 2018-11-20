@@ -1,5 +1,5 @@
 {
-  "Clinical data":[
+  "Clinical":[
     {"Hospital": {
       "label": "Hospital",
       "list": "hospitals",
@@ -165,6 +165,7 @@
     {
       "ObstructiveSleepApnea":{
         "label":"Obstructive Sleep Apnea",
+        "type":"radio",
         "inputs":
         [{"type":"radio", "name":"obstructiveSleepApnea", "value":"1", "label": " Yes "},
           {"type":"radio", "name":"obstructiveSleepApnea", "value":"0", "label":" No "}]}
@@ -180,6 +181,7 @@
     {
       "CAD":{
         "label":"Coronary Artery disease",
+        "type":"radio",
         "inputs":
         [{"type":"radio", "name":"cad", "value":"1", "label": " Yes "},
           {"type":"radio", "name":"cad", "value":"0", "label":" No "}]}
@@ -194,7 +196,7 @@
     },
     {
       "PastMI":{
-        "label":"Miocardial Infaction",
+        "label":"Myocardial Infaction",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"pastMI", "value":"1", "label": " Yes "},
@@ -295,6 +297,7 @@
     {
       "RecentAcuteMI":{
         "label":"Recent Acute MI (within 90 days)",
+        "type":"radio",
         "inputs":
         [{"type":"radio", "name":"recentAcuteMI", "value":"1", "label": " Yes "},
           {"type":"radio", "name":"recentAcuteMI", "value":"0", "label":" No "}]}
@@ -1392,6 +1395,14 @@
       "Left heart Cath:":{
         "titleOnly":"true"
       }},
+      {
+        "Number of vessels involved": {
+          "label": "Number of vessels involved",
+          "type": "number",
+          "name": "NumberOfVesselsInvolved",
+          "min":"0"
+        }
+      },
       {"Left Main stenosis >40%":{
         "label":"Left Main stenosis >40%",
         "type":"radio",
@@ -1466,7 +1477,7 @@
             "placeholder":"Free text"}
         }
       ], 
-    "Periprocedural data":[
+    "Periprocedural":[
     {
       "VascularAccessVein": {
         "label": "Vascular access- vein",
@@ -1625,9 +1636,9 @@
                     "name" : "DetailsOtherCardiacProcedures"}
                 }
   ],
-  "Postprocedural Data":[
+  "Postprocedural":[
     {
-      "Dischrage data:":{
+      "Dischrage Data:":{
         "titleOnly":"true"
       }},
       {
@@ -1778,7 +1789,7 @@
               "placeholder":"Free text"}
           }
   ],
-  "Mortality Data":[
+  "Mortality":[
     {"Alive":{
       "label":"Patient Alive",
       "type":"radio",
