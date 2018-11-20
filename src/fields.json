@@ -587,86 +587,89 @@
       "label": "Echo Date: (DD/MM/YY)",
       "type":"date",
       "name":"echoDate"}
-    }],
-    "TTE Left Ventricle":[
-    {
-      "LVEDd": {
-        "label": "LVEDd (mm)",
-        "type": "number",
-        "name": "lvedd",
-        "min": "20",
-        "max": "100",
-        "placeholder":"min: 20, max: 100"
-      }
-    },
-    {
-      "LVESd": {
-        "label": "LVESd (mm)",
-        "type": "number",
-        "name": "lvesd",
-        "min": "15",
-        "max": "100",
-        "placeholder":"min: 15, max: 100"
-      }
-    },
-    {
-      "IVS": {
-        "label": "IVS (mm)",
-        "type": "number",
-        "name": "ivs",
-        "min": "1",
-        "max": "50",
-        "placeholder":"min: 1, max: 50"
-      }
-    },
-    {
-      "PW": {
-        "label": "PW (mm)",
-        "type": "number",
-        "name": "pw",
-        "min": "1",
-        "max": "50",
-        "placeholder":"min: 1, max: 50"
-      }
-    },
-    {
-      "SimpsonEF": {
-        "label": "Simpson EF (%)",
-        "type": "number",
-        "name": "simpsonEF",
-        "min": "1",
-        "max": "80",
-        "placeholder":"min: 1, max: 80"
-      }
-    },
-    {
-      "CategoricalLVfunction": {
-        "label": "Categorical LV function",
-        "list": "CategoricalLVfunction",
-        "name": "CategoricalLVfunction",
-        "type":"list",
-        "inputs": [
-          {"value":"<30% - Severly reduced","key":"1"},
-          {"value":"31-40% - Moderatly reduced","key":"2"},
-          {"value":"41-50% - Mildly Reuced","key":"3"},
-          {"value":">51% - Nomal","key":"4"}]
-    }},
-    {
-      "LV Mass": {
-        "label": "LV Mass (g)",
-        "type": "number",
-        "name": "lvMass",
-        "min": "20",
-        "max": "300",
-        "placeholder":"min: 20, max: 300"
-      }
-    }, {
-      "Notes":{
-        "label":"Notes",
-        "rows" : "5",
-        "cols" : "60",
-        "type":"text",
-        "name" : "notes"}
+    },{
+      "TTE Left Ventricle":{
+        "titleOnly":"true"
+      }},
+      {
+        "LVEDd": {
+          "label": "LVEDd (mm)",
+          "type": "number",
+          "name": "lvedd",
+          "min": "20",
+          "max": "100",
+          "placeholder":"min: 20, max: 100"
+        }
+      },
+      {
+        "LVESd": {
+          "label": "LVESd (mm)",
+          "type": "number",
+          "name": "lvesd",
+          "min": "15",
+          "max": "100",
+          "placeholder":"min: 15, max: 100"
+        }
+      },
+      {
+        "IVS": {
+          "label": "IVS (mm)",
+          "type": "number",
+          "name": "ivs",
+          "min": "1",
+          "max": "50",
+          "placeholder":"min: 1, max: 50"
+        }
+      },
+      {
+        "PW": {
+          "label": "PW (mm)",
+          "type": "number",
+          "name": "pw",
+          "min": "1",
+          "max": "50",
+          "placeholder":"min: 1, max: 50"
+        }
+      },
+      {
+        "SimpsonEF": {
+          "label": "Simpson EF (%)",
+          "type": "number",
+          "name": "simpsonEF",
+          "min": "1",
+          "max": "80",
+          "placeholder":"min: 1, max: 80"
+        }
+      },
+      {
+        "CategoricalLVfunction": {
+          "label": "Categorical LV function",
+          "list": "CategoricalLVfunction",
+          "name": "CategoricalLVfunction",
+          "type":"list",
+          "inputs": [
+            {"value":"<30% - Severly reduced","key":"1"},
+            {"value":"31-40% - Moderatly reduced","key":"2"},
+            {"value":"41-50% - Mildly Reuced","key":"3"},
+            {"value":">51% - Nomal","key":"4"}]
+      }},
+      {
+        "LV Mass": {
+          "label": "LV Mass (g)",
+          "type": "number",
+          "name": "lvMass",
+          "min": "20",
+          "max": "300",
+          "placeholder":"min: 20, max: 300"
+        }
+      }, {
+        "Notes":{
+          "label":"Notes",
+          "rows" : "5",
+          "cols" : "60",
+          "type":"text",
+          "name" : "notes"}
+      
     }],
     "TTE Mitral Valve":[
       {
