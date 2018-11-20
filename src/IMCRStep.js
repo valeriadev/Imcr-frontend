@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { SubmitRecord } from './IMCRSubmitRecordComponent';
 import fields from "./fields.json";
 import { getByKey } from "./mitraClipRecord"
-
+import logo from './IMCR-LOGO.png';
 
 export default class IMCRStep extends Component {
     constructor() {
@@ -69,9 +69,12 @@ export default class IMCRStep extends Component {
     render() {
         return (<div >
                <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+                    <a href="#">
+                        <img className="logo" src={logo} alt={"IMCR"}/>
+                    </a>
                     {this.createNavigationBar()}
                 </nav>
-             <div class="card">   
+             <div className="card1">   
             <h3>{this.props.stepName}</h3>
             <form
                 ref={form => this.form = form} >

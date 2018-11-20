@@ -5,6 +5,7 @@
       "list": "hospitals",
       "name": "hospitals",
       "type":"list",
+      "placeholder":"Select from a list, required field *",
       "inputs": [
         {"value":"KAPLAN","key":"1"},
         {"value":"HADASA","key":"2"},
@@ -27,7 +28,8 @@
         "name": "ProcedureNumber",
         "min": "0",
         "max": "99999999999",
-        "required" : "true"
+        "required" : "true",
+        "placeholder":"required field *"
       }
     },
     {
@@ -40,6 +42,10 @@
         "mode":"must"
       }
     },
+    {
+      "Basic patient data:":{
+        "titleOnly":"true"
+      }},
     {
       "YearOfBirth":{
         "label": "Year of birth",
@@ -56,7 +62,8 @@
         "type": "number",
         "name": "Age",
         "min": "18",
-        "max": "120"
+        "max": "120",
+        "placeholder":" [ 18 - 120 ] "
       }
     },
     {
@@ -73,8 +80,10 @@
         "label": "Height (m)",
         "type": "number",
         "name": "Height",
-        "min": "1.40",
-        "max": "2.20"
+        "min":1.40,
+        "max":2.20,
+        "step":"0.01",
+        "placeholder":"  [ 1.40 - 2.20 ] "
       }
     },
     {
@@ -83,21 +92,24 @@
         "type": "number",
         "name": "Weight",
         "min": "40",
-        "max": "180"
+        "max": "180",
+        "placeholder":" [ 40 - 180 ] "
       }
     },
     {
       "BMI": {
         "label": "BMI",
         "type": "number",
-        "name": "BMI"
+        "name": "BMI",
+        "placeholder":"Automatically calculated fields"
       }
     },
     {
       "BSA": {
         "label": "BSA",
         "type": "number",
-        "name": "BSA"
+        "name": "BSA",
+        "placeholder":"Automatically calculated fields"
       }
     },
     {
@@ -106,9 +118,10 @@
         "rows" : "5",
         "cols" : "60",
         "type":"text",
-        "name" : "notes"}
+        "name" : "notes",
+        "placeholder":"Free text"}
     }],
-  "Past medical history":[
+  "Medical history":[
     {
       "Hypertension":{
         "label":"Hypertension ",
@@ -158,7 +171,7 @@
     },
     {
       "PastCVAorTIA":{
-        "label":"Stroke? (CVA or TIA)",
+        "label":"Stroke (CVA or TIA)",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"pastCVAorTIA", "value":"1", "label": " Yes "},
@@ -166,14 +179,14 @@
     },
     {
       "CAD":{
-        "label":"Coronary Artery disease? ",
+        "label":"Coronary Artery disease",
         "inputs":
         [{"type":"radio", "name":"cad", "value":"1", "label": " Yes "},
           {"type":"radio", "name":"cad", "value":"0", "label":" No "}]}
     },
     {
       "PastPCI":{
-        "label":"PCI?",
+        "label":"PCI",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"pastPCI", "value":"1", "label": " Yes "},
@@ -181,7 +194,7 @@
     },
     {
       "PastMI":{
-        "label":"Miocardial Infaction?",
+        "label":"Miocardial Infaction",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"pastMI", "value":"1", "label": " Yes "},
@@ -189,10 +202,11 @@
     },
     {
       "CardiacSurgery":{
-        "label": "Cardiac Surgery?",
+        "label": "Cardiac Surgery",
         "list": "CardiacSurgery",
         "name": "CardiacSurgery",
         "type":"list",
+        "placeholder":" Select from a list:  No / CABG / AVR / MVR / Other",
         "inputs": [
           {"value":"No","key":"0"},
           {"value":"CABG","key":"1"},
@@ -202,10 +216,11 @@
     },
     {
       "Atrial Fibrillation / Flutter?":{
-        "label": "Atrial Fibrillation / Flutter?",
+        "label": "Atrial Fibrillation / Flutter",
         "list": "AtrialFibOrFlutter",
         "name": "AtrialFibOrFlutter",
         "type":"list",
+        "placeholder":" Select from a list:  No /  Proxysmal AF / Chronic AF",
         "inputs": [
           {"value":"No","key":"0"},
           {"value":"Proxysmal AF","key":"1"},
@@ -213,10 +228,11 @@
     },
     {
       "Pacemaker":{
-        "label": "Pacemaker?",
+        "label": "Pacemaker",
         "list": "Pacemaker",
         "name": "Pacemaker",
         "type":"list",
+        "placeholder":" Select from a list:  No /  Pacemaker / CRT",
         "inputs": [
           {"value":"No","key":"0"},
           {"value":"Pacemaker","key":"1"},
@@ -224,47 +240,43 @@
     },
     {
       "OncologicDisease":{
-        "label":"Oncologic disease?",
+        "label":"Oncologic disease",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"OncologicDisease", "value":"1", "label": " Yes "},
           {"type":"radio", "name":"OncologicDisease", "value":"0", "label":" No "}]}
     },
     {
-      "Notes":{
-        "label":"Notes",
-        "rows" : "5",
-        "cols" : "60",
-        "type":"text",
-        "name" : "notes"}
-    }
-  ],
-  "Heart Failure Data":[
+      "Heart Failure Data:":{
+        "titleOnly":"true"
+      }},
     {
       "PreviousMitraClipBoolean":{
-        "label":"Previous MitraClip?",
+        "label":"Previous MitraClip",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"previousMitraClip", "value":"1", "label": " Yes "},
           {"type":"radio", "name":"previousMitraClip", "value":"0", "label":" No "}]}
     },
     {
-      "Setting? (Elective/ Emergent / Urgent)": {
+      "Setting (Elective/ Emergent / Urgent)": {
         "label": "Procedure Urgency",
         "list": "procedureUrgency",
         "name": "procedureUrgency",
         "type":"list",
+        "placeholder":" Select from a list:  Elective /  Emergent / Urgent",
         "inputs": [
           {"value":"Elective","key":"1"},
           {"value":"Emergent","key":"2"},
           {"value":"Urgent","key":"3"}]}
     },
     {
-      "Assist device at the time of Mitraclip?":{
-        "label": "Cardiac Surgery?",
-        "list": "CardiacSurgery",
-        "name": "CardiacSurgery",
+      "Assist device at the time of Mitraclip":{
+        "label": "Assist device at the time of Mitraclip",
+        "list": "AssistdeviceatthetimeofMitraclip",
+        "name": "AssistdeviceatthetimeofMitraclip",
         "type":"list",
+        "placeholder":" Select from a list:  No /  IABP / IMPELLA / ECMO / Other ",
         "inputs": [
           {"value":"No","key":"0"},
           {"value":"IABP","key":"1"},
@@ -274,7 +286,7 @@
     },
     {
       "RecentCardiogenicShock":{
-        "label":"Recent Cardiogenic shock (within 30 days)?",
+        "label":"Recent Cardiogenic shock (within 30 days)",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"recentCardiogenicShock", "value":"1", "label": " Yes "},
@@ -282,14 +294,14 @@
     },
     {
       "RecentAcuteMI":{
-        "label":"Recent Acute MI? (within 90 days)",
+        "label":"Recent Acute MI (within 90 days)",
         "inputs":
         [{"type":"radio", "name":"recentAcuteMI", "value":"1", "label": " Yes "},
           {"type":"radio", "name":"recentAcuteMI", "value":"0", "label":" No "}]}
     },
     {
       "RecentPCI":{
-        "label":"Recent PCI? (within 30 days)",
+        "label":"Recent PCI (within 30 days)",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"recentPCI", "value":"1", "label": " Yes "},
@@ -297,7 +309,7 @@
     },
     {
       "RecentHFHospitalization":{
-        "label":"Recent HF hospitaliztion? (within 30 days)",
+        "label":"Recent HF hospitaliztion (within 30 days)",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"recentHFHospitalization", "value":"1", "label": " Yes "},
@@ -305,14 +317,14 @@
     },
 
     {"NumberOfHfHospitalization": {
-      "label": "Number of HF hospitalization? (last year)",
+      "label": "Number of HF hospitalization (last year)",
       "type": "number",
       "name": "numberOfHfHospitalization",
       "min": "0",
       "max": "100"}
     },
     {"NumberOfAllHospitalizationsNonElective": {
-      "label": "Number of all hospitaliztions? (last year), non elective, non elective",
+      "label": "Number of all hospitaliztions (last year), non elective, non elective",
       "type": "number",
       "name": "numberOfAllHospitalizationsNonElective",
       "min": "0",
@@ -324,6 +336,7 @@
         "list": "cardiomyopathy",
         "name": "cardiomyopathy",
         "type":"list",
+        "placeholder":" Select from a list:  No /  DCM / HCM / Ischemic / Valvular ",
         "inputs": [
           {"value":"No","key":"o"},
           {"value":"DCM","key":"1"},
@@ -333,10 +346,11 @@
     },
     {
       "Mechanism": {
-        "label": "MR Mechanism?",
+        "label": "MR Mechanism",
         "list": "mechanism",
         "name": "mechanism",
         "type":"list",
+        "placeholder":" Select from a list:  Degenerative /  Functional / Mixed / Undefined ",
         "inputs": [
           {"value":"Degenerative","key":"1"},
           {"value":"Functional","key":"2"},
@@ -345,16 +359,17 @@
     },
     {
       "MR Severity": {
-        "label": "MR Severity? (Worst measured)",
+        "label": "MR Severity (Worst measured)",
         "list": "MrSeverity",
         "name": "MrSeverity",
         "type":"list",
+        "placeholder":" Select from a list:  Trace /  Mild / Moderate / Moderate to severe / Severe ",
         "inputs": [
-          {"value":"Trace","key":"0"},
-          {"value":"Mild","key":"1"},
-          {"value":"Moderate","key":"2"},
-          {"value":"Moderate to severe","key":"3"},
-          {"value":"Severe","key":"4"}]}
+          {"value":"Trace (0)","key":"0"},
+          {"value":"Mild (1+)","key":"1"},
+          {"value":"Moderate (2+)","key":"2"},
+          {"value":"Moderate to severe (3+)","key":"3"},
+          {"value":"Severe (4+)","key":"4"}]}
     },
     {
       "Mobility": {
@@ -362,6 +377,7 @@
         "list": "mobility",
         "name": "mobility",
         "type":"list",
+        "placeholder":" Select from a list:  No /  Walker / Cane / Wheelchair / Bedridden ",
         "inputs": [
           {"value":"No","key":"o"},
           {"value":"Walker","key":"1"},
@@ -371,10 +387,11 @@
     },
     {
       "peripheral_edema": {
-        "label": "Peripheral pitting edema?",
+        "label": "Peripheral pitting edema",
         "list": "peripheral_edema",
         "name": "peripheral_edema",
         "type":"list",
+        "placeholder":" Select from a list:  No /  Ankle / Shin / Thigh / Anasarca ",
         "inputs": [
           {"value":"No","key":"o"},
           {"value":"Ankle","key":"1"},
@@ -383,32 +400,31 @@
           {"value":"Anasarca","key":"4"}]}
     },
     {"FcNYHA": {
-      "label": "Functional Class (NYHA)?",
+      "label": "Functional Class (NYHA)",
       "type": "number",
       "name": "fcNYHA",
       "min": "1",
       "max": "4",
-      "step":"1"}
+      "step":"1",
+      "placeholder":" [ 1 - 4 ] "
+    }
     },
     {"SixMWT": {
       "label": "6 Minute walk test (meters)",
       "type": "number",
       "name": "sixMWT",
       "min": "0",
-      "max": "1000"}
+      "max": "1000",
+      "placeholder":" [ 0 - 1000 ] "
+    }
     },
     {
-      "Notes":{
-        "label":"Notes",
-        "rows" : "5",
-        "cols" : "60",
-        "type":"text",
-        "name" : "notes"}
-    }],
-  "Medical Therapy:":[
+      "Medical Therapy:":{
+        "titleOnly":"true"
+      }},
     {
       "Antiplatelets":{
-        "label":"Antipleteles?",
+        "label":"Antipleteles",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"antiplatelets", "value":"1", "label": " Yes "},
@@ -416,7 +432,7 @@
     },
     {
       "Anticoagulants":{
-        "label":"Anticoagulants?",
+        "label":"Anticoagulants",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"anticoagulants", "value":"1", "label": " Yes "},
@@ -424,7 +440,7 @@
     },
     {
       "ACE_I_ARB":{
-        "label":"ACE-I / ARB?",
+        "label":"ACE-I / ARB",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"ace_I_ARB", "value":"1", "label": " Yes "},
@@ -432,7 +448,7 @@
     },
     {
       "Beta_blockers":{
-        "label":"Beta blockers?",
+        "label":"Beta blockers",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"betaBlockers", "value":"1", "label": " Yes "},
@@ -440,7 +456,7 @@
     },
     {
       "AntiMineralocorticoids":{
-        "label":"Anti Mineralocorticoids?",
+        "label":"Anti Mineralocorticoids",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"AntiMineralocorticoids", "value":"1", "label": " Yes "},
@@ -448,7 +464,7 @@
     },
     {
       "Digoxin":{
-        "label":"Digoxin?",
+        "label":"Digoxin",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"digoxin", "value":"1", "label": " Yes "},
@@ -456,7 +472,7 @@
     },
     {
       "PulmonaryVasodilators":{
-        "label":"Pulmonary Vasodilators ",
+        "label":"Pulmonary Vasodilators",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"pulmonaryVasodilators", "value":"1", "label": " Yes "},
@@ -464,7 +480,7 @@
     },
     {
       "FusidPerOs":{
-        "label":"Fusid? (per os)",
+        "label":"Fusid (per os)",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"fusidPerOs", "value":"1", "label": " Yes "},
@@ -475,103 +491,105 @@
       "type": "number",
       "name": "fusidPerOsDosage",
       "min": "0",
-      "max": "240"}
+      "max": "240",
+      "step":"10",
+      "placeholder":" [ 0 - 240 ] "}
     },
     {
       "FusidIvDaycare":{
-        "label":"Fusid? (IV)",
+        "label":"Fusid (IV)",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"fusidIvDaycare", "value":"1", "label": " Yes "},
           {"type":"radio", "name":"fusidIvDaycare", "value":"0", "label":" No "}]}
     },
     {
-      "Notes":{
-        "label":"Notes",
-        "rows" : "5",
-        "cols" : "60",
-        "type":"text",
-        "name" : "notes"}
-    }],
-  "Risk Of Surgery":[
+      "Risk Of Surgery:":{
+        "titleOnly":"true"
+      }},
     {"euroscore2": {
       "label": "Euroscore2 (%)",
       "type": "number",
       "name": "euroscore2",
       "min": "0",
-      "max": "100"}
+      "max": "100",
+      "placeholder":" [ 0 - 100 ] "}
     },
     {"sts_score": {
       "label": "STS score- for MV repair mortality ",
       "type": "number",
       "name": "sts_score",
       "min": "0",
-      "max": "100"}
+      "max": "100",
+      "placeholder":" [ 0 - 100 ] "}
     },
     {
-      "Notes":{
-        "label":"Notes",
-        "rows" : "5",
-        "cols" : "60",
-        "type":"text",
-        "name" : "notes"}
-    }],
-  "LAB results":[
+      "LAB results:":{
+        "titleOnly":"true"
+      }},
     {"hemoglobin_g_dL": {
       "label": "Hemoglobin (g/dL) - choose one",
       "type": "number",
       "name": "hemoglobin_g_dL",
       "min": "0",
-      "max": "20"}
+      "max": "20",
+      "placeholder":" [ 0 - 20 ] "}
     },
     {"hemoglobin_mmol_L": {
       "label": "Hemoglobin (mmol/L)",
       "type": "number",
       "name": "hemoglobin_mmol_L",
       "min": "0",
-      "max": "20"}
+      "max": "20",
+      "placeholder":" [ 0 - 20 ] "}
     },
     {"Creatinine_mg_dL": {
       "label": "Creatinine (mg/dL) - choose one",
       "type": "number",
       "name": "Creatinine_mg_dL",
       "min": "0",
-      "max": "10"}
+      "max": "10",
+      "placeholder":" [ 0 - 10 ] "}
     },
     {"Creatinine_micromol_l": {
       "label": "Creatinine (micromol/l) ",
       "type": "number",
       "name": "Creatinine_micromol_l",
       "min": "0",
-      "max": "500"}
+      "max": "500",
+      "placeholder":" [ 0 - 500 ] "}
     },
     {"GFR": {
       "label": "GFR (ml/min)",
       "type": "number",
       "name": "GFR",
       "min": "0",
-      "max": "150"}
+      "max": "150",
+      "placeholder":" [ 0 - 150 ] "}
     },
     {"Albumin": {
       "label": "Albumin (g/dL)",
       "type": "number",
       "name": "albumin",
       "min": "0",
-      "max": "10"}
+      "max": "10",
+      "placeholder":" [ 0 - 10 ] "}
     },
     {"BNP": {
       "label": "BNP (pg/mL = ng/L)",
       "type": "number",
       "name": "BNP",
       "min": "0",
-      "max": "20000"}
+      "max": "20000",
+      "placeholder":" [ 0 - 20000 ] "}
     },
     {"ProBNP": {
       "label": "NT-pro-BNP (pg/mL = ng/L)",
       "type": "number",
       "name": "ProBNP",
       "min": "0",
-      "max": "20000"}
+      "max": "20000",
+      "placeholder":" [ 0 - 20000 ] "}
     },
     {
       "Notes":{
@@ -579,16 +597,18 @@
         "rows" : "5",
         "cols" : "60",
         "type":"text",
-        "name" : "notes"}
+        "name" : "notes",
+        "placeholder":"Free text"}
     }],
   "TTE":[
     {
     "DateOfProcedure":{
       "label": "Echo Date: (DD/MM/YY)",
       "type":"date",
-      "name":"echoDate"}
+      "name":"echoDate",
+      "min":"2000-01-01"}
     },{
-      "TTE Left Ventricle":{
+      "TTE Left Ventricle:":{
         "titleOnly":"true"
       }},
       {
@@ -598,7 +618,7 @@
           "name": "lvedd",
           "min": "20",
           "max": "100",
-          "placeholder":"min: 20, max: 100"
+          "placeholder":" [ 20 - 100 ] "
         }
       },
       {
@@ -608,7 +628,7 @@
           "name": "lvesd",
           "min": "15",
           "max": "100",
-          "placeholder":"min: 15, max: 100"
+          "placeholder":" [ 15 - 100 ]"
         }
       },
       {
@@ -618,7 +638,7 @@
           "name": "ivs",
           "min": "1",
           "max": "50",
-          "placeholder":"min: 1, max: 50"
+          "placeholder":" [ 1 - 50 ] "
         }
       },
       {
@@ -628,7 +648,7 @@
           "name": "pw",
           "min": "1",
           "max": "50",
-          "placeholder":"min: 1, max: 50"
+          "placeholder":" [ 1 - 50 ] "
         }
       },
       {
@@ -638,7 +658,7 @@
           "name": "simpsonEF",
           "min": "1",
           "max": "80",
-          "placeholder":"min: 1, max: 80"
+          "placeholder":" [ 1 - 80 ] "
         }
       },
       {
@@ -647,6 +667,7 @@
           "list": "CategoricalLVfunction",
           "name": "CategoricalLVfunction",
           "type":"list",
+          "placeholder":" Select from a list:    <30% - Severly reduced   /    31-40% - Moderatly reduced   /   41-50% - Mildly Reuced   /   >51% - Nomal ",
           "inputs": [
             {"value":"<30% - Severly reduced","key":"1"},
             {"value":"31-40% - Moderatly reduced","key":"2"},
@@ -660,21 +681,15 @@
           "name": "lvMass",
           "min": "20",
           "max": "300",
-          "placeholder":"min: 20, max: 300"
+          "placeholder":" [ 20 - 300 ] "
         }
       }, {
-        "Notes":{
-          "label":"Notes",
-          "rows" : "5",
-          "cols" : "60",
-          "type":"text",
-          "name" : "notes"}
-      
-    }],
-    "TTE Mitral Valve":[
+        "TTE Mitral Valve:":{
+          "titleOnly":"true"
+        }},
       {
         "MitralAnulusCacification":{
-          "label":"Mitral anulus cacification?",
+          "label":"Mitral anulus cacification",
           "type":"radio",
           "inputs":
           [{"type":"radio", "name":"MitralAnulusCacification", "value":"1", "label": " Yes "},
@@ -687,7 +702,7 @@
         "name": "meanGradient",
         "min": "0",
         "max": "20",
-        "placeholder":"min: 0, max: 20"
+        "placeholder":" [ 0 - 20 ] "
       }
     },
     {
@@ -696,12 +711,13 @@
         "list": "MrSeverityColor",
         "name": "MrSeverityColor",
         "type":"list",
+        "placeholder":" Select from a list:  Trace / Mild / Moderate / Moderate to severe / Severe ",
         "inputs": [
-          {"value":"Trace","key":"0"},
-          {"value":"Mild","key":"1"},
-          {"value":"Moderate","key":"2"},
-          {"value":"Moderate to severe","key":"3"},
-          {"value":"Severe","key":"4"}]
+          {"value":"Trace (0)","key":"0"},
+          {"value":"Mild (1+)","key":"1"},
+          {"value":"Moderate (2+)","key":"2"},
+          {"value":"Moderate to severe (3+)","key":"3"},
+          {"value":"Severe (4+)","key":"4"}]
     }},
     {
       "Mrmechanism": {
@@ -709,6 +725,7 @@
         "list": "typeOfMR",
         "name": "typeOfMR",
         "type":"list",
+        "placeholder":" Select from a list:  Degenerative / Functional / Mixed / Undetermined ",
         "inputs": [
           {"value":"Degenerative","key":"1"},
           {"value":"Functional","key":"2"},
@@ -720,9 +737,10 @@
         "label": "Effective regurgitant orifice area (cm2)",
         "type": "number",
         "name": "EffectiveRegurgitantOrificeArea",
-        "min": "0",
-        "max": "0.9",
-        "placeholder":"min: 0, max: 0.9"
+        "min": 0,
+        "max": 0.9,
+        "step":"0.01",
+        "placeholder":" [ 0 - 0.9 ] "
       }
     },
     {
@@ -732,21 +750,16 @@
         "name": "mRVolume",
         "min": "1",
         "max": "100",
-        "placeholder":"min: 1, max: 100"
+        "placeholder":"[ 1 - 100 ]"
       }
     },
     {
-      "Notes":{
-        "label":"Notes",
-        "rows" : "5",
-        "cols" : "60",
-        "type":"text",
-        "name" : "notes"}
-    }],
-    "TTE Aortic Valve":[
+      "TTE Aortic Valve:":{
+        "titleOnly":"true"
+      }},
     {
       "AorticStenosisPresent":{
-        "label":"Aortic stenosis present?",
+        "label":"Aortic stenosis present",
         "type":"radio",
         "inputs":
         [{"type":"radio", "name":"AorticStenosisPresent", "value":"1", "label": " Yes "},
@@ -754,14 +767,15 @@
     },
     {
       "ASseverity": {
-        "label": "Aortic Stenosis severity?",
+        "label": "Aortic Stenosis severity",
         "list": "asSeverity",
         "name": "asSeverity",
         "type":"list",
+        "placeholder":" Select from a list:  Mild / Moderate / Severe ",
         "inputs": [
-          {"value":"Mild","key":"1"},
-          {"value":"Moderate","key":"2"},
-          {"value":"Severe","key":"3"}]
+          {"value":"Mild (1)","key":"1"},
+          {"value":"Moderate (2)","key":"2"},
+          {"value":"Severe (3) ","key":"3"}]
       }},
     {
       "AvMeanGradient": {
@@ -770,7 +784,7 @@
         "name": "avMeanGradient",
         "min": "1",
         "max": "200",
-        "placeholder":"min: 1, max: 200"
+        "placeholder":" [ 1 - 200 ]"
       }
     },
     {
@@ -780,30 +794,26 @@
         "name": "mRVolume",
         "min": "0.1",
         "max": "4",
-        "placeholder":"min: 0.1, max: 4"
+        "step":"0.01",
+        "placeholder":" [ 0.1 - 4 ]"
       }
     },
     {
-      "Notes":{
-        "label":"Notes",
-        "rows" : "5",
-        "cols" : "60",
-        "type":"text",
-        "name" : "notes"}
-    }
-  ],
-"TTE Other parameters":[
+      "TTE Other parameters:":{
+        "titleOnly":"true"
+      }},
   {
     "TricuspidRegurgitationSeverity": {
       "label": "Tricuspid Regurgitation Severity",
       "list": "TricuspidRegurgitationSeverity",
       "name": "TricuspidRegurgitationSeverity",
       "type":"list",
+      "placeholder":" Select from a list:  No TR / Mild TR / Moderate TR / Severe TR ",
       "inputs": [
-        {"value":"No TR","key":"0"},
-        {"value":"Mild TR","key":"1"},
-        {"value":"Moderate TR","key":"2"},
-        {"value":"Severe TR","key":"3"}]
+        {"value":"No TR (0)","key":"0"},
+        {"value":"Mild TR (1)","key":"1"},
+        {"value":"Moderate TR (2)","key":"2"},
+        {"value":"Severe TR (3)","key":"3"}]
     }},
     {
       "SevereTRsubClassification": {
@@ -811,10 +821,11 @@
         "list": "SevereTRsubClassification",
         "name": "SevereTRsubClassification",
         "type":"list",
+        "placeholder":" Select from a list:  Severe, unspecified / Massive / Torrential  ",
         "inputs": [
-          {"value":"Severe, unspecified","key":"3"},
-          {"value":"Massive","key":"4"},
-          {"value":"Torrential","key":"5"}]
+          {"value":"Severe, unspecified (3)","key":"3"},
+          {"value":"Massive (4)","key":"4"},
+          {"value":"Torrential (5)","key":"5"}]
       }},
       {
         "TRsystolicGradient": {
@@ -823,7 +834,7 @@
           "name": "TRsystolicGradient",
           "min": "1",
           "max": "150",
-          "placeholder":"min: 1, max: 150"
+          "placeholder":" [ 1 - 150 ] "
         }
       },
       {
@@ -833,7 +844,7 @@
           "name": "EstimatedPApressure",
           "min": "1",
           "max": "150",
-          "placeholder":"min: 1, max: 150"
+          "placeholder":" [ 1 - 150 ] "
         }
       },
       {
@@ -842,6 +853,7 @@
           "list": "DiastolicDysfunctionGrade",
           "name": "DiastolicDysfunctionGrade",
           "type":"list",
+          "placeholder":" Select from a list:  No/ Grade 1 (impaired relaxation) / Grade 2 (Elevated filling pressures) / Grade 3 (Restrictive pattern)  ",
           "inputs": [
             {"value":"No","key":"0"},
             {"value":"Grade 1 (impaired relaxation)","key":"1"},
@@ -854,11 +866,12 @@
             "list": "RightVentricularDysfunctionGrade",
             "name": "RightVentricularDysfunctionGrade",
             "type":"list",
+            "placeholder":" Select from a list:  Normal / Mild / Moderate / Severe  ",
             "inputs": [
-              {"value":"Normal","key":"0"},
-              {"value":"Mild","key":"1"},
-              {"value":"Moderate","key":"2"},
-              {"value":"Severe","key":"3"}]
+              {"value":"Normal (0)","key":"0"},
+              {"value":"Mild  (1)","key":"1"},
+              {"value":"Moderate (2)","key":"2"},
+              {"value":"Severe (3)","key":"3"}]
           }},
           {
             "TAPSE": {
@@ -867,7 +880,7 @@
               "name": "TAPSE",
               "min": "1",
               "max": "30",
-              "placeholder":"min: 1, max: 30"
+              "placeholder":" [ 1 - 30 ] "
             }
           },
           {
@@ -876,11 +889,12 @@
               "list": "RightVentricularSizeGrade",
               "name": "RightVentricularSizeGrade",
               "type":"list",
+              "placeholder":" Select from a list:  Normal in size / Mildly dilated / Moderately dilated / Severely dilated  ",
               "inputs": [
-                {"value":"Normal in size","key":"0"},
-                {"value":"Mildly dilated","key":"1"},
-                {"value":"Moderately dilated","key":"2"},
-                {"value":"Severely dilated","key":"3"}]
+                {"value":"Normal in size (0)","key":"0"},
+                {"value":"Mildly dilated (1)","key":"1"},
+                {"value":"Moderately dilated (2)","key":"2"},
+                {"value":"Severely dilated (3)","key":"3"}]
             }},
             {
               "IVCdiameter": {
@@ -889,7 +903,7 @@
                 "name": "IVCdiameter",
                 "min": "1",
                 "max": "40",
-                "placeholder":"min: 1, max: 40"
+                "placeholder":"[ 1 - 40 ]"
               }
             },
             {
@@ -899,7 +913,7 @@
                 "name": "LeftAtrialDiameter",
                 "min": "1",
                 "max": "80",
-                "placeholder":"min: 1, max: 80"
+                "placeholder":" [ 1 - 80 ]"
               }
             },
             {
@@ -909,7 +923,7 @@
                 "name": "LeftAtrialArea",
                 "min": "1",
                 "max": "80",
-                "placeholder":"min: 1, max: 80"
+                "placeholder":"[ 1 - 80 ]"
               }
             },
             {
@@ -919,12 +933,12 @@
                 "name": "LeftAtriumVolume",
                 "min": "1",
                 "max": "200",
-                "placeholder":"min: 1, max: 200"
+                "placeholder":" [ 1 - 200 ]"
               }
             },
             {
               "ASDpresent":{
-                "label":"ASD present?",
+                "label":"ASD present",
                 "type":"radio",
                 "inputs":
                 [{"type":"radio", "name":"ASDpresent", "value":"1", "label": " Yes "},
@@ -932,10 +946,11 @@
             },
             {
               "Shunt": {
-                "label": "Shunt",
+                "label": "Shunt present",
                 "list": "Shunt",
                 "name": "Shunt",
                 "type":"list",
+                "placeholder":" Select from a list:  No / Right to left / Left to right / Bidirectional ",
                 "inputs": [
                   {"value":"No","key":"0"},
                   {"value":"Right to left","key":"1"},
@@ -948,335 +963,333 @@
                 "rows" : "5",
                 "cols" : "60",
                 "type":"text",
-                "name" : "notes"}
-            }
+                "name" : "notes",
+                "placeholder":"Free text"}
+            },
+            {
+              "Post-procedural echocardiographic data:":{
+                "titleOnly":"true"
+              }},
+            {
+              "PostProcedureEchoDate":{
+                "label": "Post-procedure Echo date",
+                "type":"date",
+                "name":"PostProcedureEchoDate",
+                "min":"2011-01-01"
+              }
+            },
+            {
+              "PostProcedureLvDysfunction": {
+                "label": "Post-procedure LV Dysfunction",
+                "list": "PostProcedureLvDysfunction",
+                "name": "PostProcedureLvDysfunction",
+                "type":"list",
+               "placeholder":" Select from a list:   Mild / Moderate / Moderate to severe / Severe  ",
+                "inputs": [
+                  {"value":"Mild","key":"1"},
+                  {"value":"Moderate","key":"2"},
+                  {"value":"Moderate to severe","key":"3"},
+                  {"value":"Severe","key":"4"}]
+            }},
+            {
+              " Post-procedure LVEF%": {
+                "label": " Post-procedure LVEF%",
+                "type": "number",
+                "name": "PostProcedureLVEF"
+              }
+            },
+            {
+              "Post-precedure MR": {
+                "label": "Post-precedure MR",
+                "list": "Post-precedure MR",
+                "name": "Post-precedure MR",
+                "type":"list",
+                 "placeholder":" Select from a list:   Mild / Moderate / Moderate to severe / Severe  ",
+                "inputs": [
+                  {"value":"Mild (1)","key":"1"},
+                  {"value":"Moderate (2)","key":"2"},
+                  {"value":"Moderate to severe (3)","key":"3"},
+                  {"value":"Severe (4)","key":"4"}]
+            }},
+            {
+              "Post-procedure MS mean gradient mmHg": {
+                "label": "Post-procedure MS mean gradient mmHg",
+                "type": "number",
+                "name": "PostProcedureMSMeanGradientMmHg"
+              }
+            },
+            {
+              "Post-procedure TR severity color": {
+                "label": "Post-procedure TR severity color",
+                "list": "TrSeverityColor",
+                "name": "TrSeverityColor",
+                "type":"list",
+                 "placeholder":" Select from a list:   Mild / Moderate /  Severe / Massive / Torrential ",
+                "inputs": [
+                  {"value":"Mild (1)","key":"1"},
+                  {"value":"Moderate (2)","key":"2"},
+                  {"value":"Severe (3)","key":"3"},
+                  {"value":"Massive (4)","key":"4"},
+                  {"value":"Torrential (5)","key":"5"}
+                ]
+            }},
+            {
+              "PostProcedureEstimatedRvPressure": {
+                "label": "Post-procedure Estimated RV pressure, mmHg",
+                "type": "number",
+                "name": "PostProcedureEstimatedRvPressure"
+              }
+            },
+            {
+              "RVfunction": {
+                "label": "Post-procedure RV function",
+                "list": "RVfunction",
+                "name": "RVfunction",
+                "type":"list",
+                 "placeholder":" Select from a list:  Mildly impaired / Moderately impaired / Moderate to severe impaired / Severely impaired ",
+                "inputs": [
+                  {"value":"Mildly impaired (1)","key":"1"},
+                  {"value":"Moderately impaired (2)","key":"2"},
+                  {"value":"Moderate to severe impaired (3)","key":"3"},
+                  {"value":"Severely impaired (4)","key":"4"}
+                ]
+            }},
+            {
+              "RVdiameter": {
+                "label": "Post-procedure RV diameter",
+                "list": "RVdiameter",
+                "name": "RVdiameter",
+                "type":"list",
+                "placeholder":" Select from a list:  Mildly dilated / Moderatly dilated / Moderate to severe dilated / Severely dilated  ",
+                "inputs": [
+                  {"value":"Mildly dilated (1)","key":"1"},
+                  {"value":"Moderatly dilated (2)","key":"2"},
+                  {"value":"Moderate to severe dilated (3)","key":"3"},
+                  {"value":"Severely dilated (4)","key":"4"}
+                ]
+            }},
+            {
+              "ASD_PFO":{
+                "label":"Post-procedure ASD/PFO",
+                "type":"radio",
+                "inputs":
+                [{"type":"radio", "name":"ASD_PFO", "value":"1", "label": " Yes "},
+                  {"type":"radio", "name":"ASD_PFO", "value":"0", "label":" No "}]}
+            },
+            {
+              "Shunt": {
+                "label": "Shunt",
+                "list": "Shunt",
+                "name": "Shunt",
+                "type":"list",
+                "placeholder":" Select from a list:  Right to left / Left to right / Bidirectional ",
+                "inputs": [
+                  {"value":"Right to left","key":"1"},
+                  {"value":"Left to right","key":"2"},
+                  {"value":"Bidirectional","key":"3"}]
+              }},
+              {
+                "ASD_PFOseverity": {
+                  "label": "Post-procedure ASD/PFO Severity",
+                  "list": "ASD_PFOseverity",
+                  "name": "ASD_PFOseverity",
+                  "type":"list",
+                  "placeholder":" Select from a list:  Small / Moderate / Large  ",
+                  "inputs": [
+                    {"value":"Small (1)","key":"1"},
+                    {"value":"Moderate (2)","key":"2"},
+                    {"value":"Large (3)","key":"3"}]
+                }},
+                {
+                  "diastolicDysfunction": {
+                    "label": "Post-procedure diastolic dysfunction",
+                    "list": "diastolicDysfunction",
+                    "name": "diastolicDysfunction",
+                    "type":"list",
+                   "placeholder":" Select from a list:  Impaired relaxation / Pseudonormal / Restrictive  ",
+
+                    "inputs": [
+                      {"value":"Impaired relaxation","key":"1"},
+                      {"value":"Pseudonormal","key":"2"},
+                      {"value":"Restrictive","key":"3"}]
+                  }},
+                  {
+                    "IVCdiameter": {
+                      "label": "IVC diameter, mm",
+                      "type": "number",
+                      "name": "IVCdiameter"
+                    }
+                  },
+                  {
+                    "LeftAtriumVolume": {
+                      "label": "Left atrium volume",
+                      "type": "number",
+                      "name": "LeftAtriumVolume"
+                    }
+                  },
+                  {
+                    "Notes":{
+                      "label":"Notes",
+                      "rows" : "5",
+                      "cols" : "60",
+                      "type":"text",
+                      "name" : "notes"}
+                  }
+        
 ],
-  "TEE: Post-procedural echocardiographic data":[
-    {
-      "PostProcedureEchoDate":{
-        "label": "Post-procedure Echo date",
-        "type":"date",
-        "name":"PostProcedureEchoDate",
-        "min":"2011-01-01"
-      }
-    },
-    {
-      "PostProcedureLvDysfunction": {
-        "label": "Post-procedure LV Dysfunction",
-        "list": "PostProcedureLvDysfunction",
-        "name": "PostProcedureLvDysfunction",
-        "type":"list",
-        "inputs": [
-          {"value":"Mild","key":"1"},
-          {"value":"Moderate","key":"2"},
-          {"value":"Moderate to severe","key":"3"},
-          {"value":"Severe","key":"4"}]
-    }},
-    {
-      " Post-procedure LVEF%": {
-        "label": " Post-procedure LVEF%",
-        "type": "number",
-        "name": "PostProcedureLVEF",
-        "min": "0",
-        "max": "100"
-      }
-    },
-    {
-      "Post-precedure MR": {
-        "label": "Post-precedure MR",
-        "list": "Post-precedure MR",
-        "name": "Post-precedure MR",
-        "type":"list",
-        "inputs": [
-          {"value":"Good","key":"0"},
-          {"value":"Mild","key":"1"},
-          {"value":"Moderate","key":"2"},
-          {"value":"Moderate to severe","key":"3"},
-          {"value":"Severe","key":"4"}]
-    }},
-    {
-      "Post-procedure MS mean gradient mmHg": {
-        "label": "Post-procedure MS mean gradient mmHg",
-        "type": "number",
-        "name": "PostProcedureMSMeanGradientMmHg",
-        "min": "0",
-        "max": "100"
-      }
-    },
-    {
-      "Post-procedure TR severity color": {
-        "label": "Post-procedure TR severity color",
-        "list": "TrSeverityColor",
-        "name": "TrSeverityColor",
-        "type":"list",
-        "inputs": [
-          {"value":"None","key":"0"},
-          {"value":"Mild","key":"1"},
-          {"value":"Moderate","key":"2"},
-          {"value":"Severe","key":"3"},
-          {"value":"Massive","key":"4"},
-          {"value":"Torrential","key":"5"}
-        ]
-    }},
-    {
-      "PostProcedureEstimatedRvPressure": {
-        "label": "Post-procedure Estimated RV pressure, mmHg",
-        "type": "number",
-        "name": "PostProcedureEstimatedRvPressure",
-        "min": "0",
-        "max": "100"
-      }
-    },
-    {
-      "RVfunction": {
-        "label": "Post-procedure RV function",
-        "list": "RVfunction",
-        "name": "RVfunction",
-        "type":"list",
-        "inputs": [
-          {"value":"Good","key":"0"},
-          {"value":"Mildly impaired","key":"1"},
-          {"value":"Moderately impaired","key":"2"},
-          {"value":"Moderate to severe impaired","key":"3"},
-          {"value":"Severely impaired","key":"4"}
-        ]
-    }},
-    {
-      "RVdiameter": {
-        "label": "Post-procedure RV diameter",
-        "list": "RVdiameter",
-        "name": "RVdiameter",
-        "type":"list",
-        "inputs": [
-          {"value":"Normal","key":"0"},
-          {"value":"Mildly dilated","key":"1"},
-          {"value":"Moderatly dilated","key":"2"},
-          {"value":"Moderate to severe dilated","key":"3"},
-          {"value":"Severely dilated","key":"4"}
-        ]
-    }},
-    {
-      "ASD_PFO":{
-        "label":"Post-procedure ASD/PFO",
-        "type":"radio",
-        "inputs":
-        [{"type":"radio", "name":"ASD_PFO", "value":"1", "label": " Yes "},
-          {"type":"radio", "name":"ASD_PFO", "value":"0", "label":" No "}]}
-    },
-    {
-      "Shunt": {
-        "label": "Shunt",
-        "list": "Shunt",
-        "name": "Shunt",
-        "type":"list",
-        "inputs": [
-          {"value":"No","key":"0"},
-          {"value":"Right to left","key":"1"},
-          {"value":"Left to right","key":"2"},
-          {"value":"Bidirectional","key":"3"}]
-      }},
-      {
-        "ASD_PFOseverity": {
-          "label": "Post-procedure ASD/PFO Severity",
-          "list": "ASD_PFOseverity",
-          "name": "ASD_PFOseverity",
-          "type":"list",
-          "inputs": [
-            {"value":"No","key":"0"},
-            {"value":"Small","key":"1"},
-            {"value":"Moderate","key":"2"},
-            {"value":"Large","key":"3"}]
-        }},
-        {
-          "diastolicDysfunction": {
-            "label": "Post-procedure diastolic dysfunction",
-            "list": "diastolicDysfunction",
-            "name": "diastolicDysfunction",
-            "type":"list",
-            "inputs": [
-              {"value":"No","key":"0"},
-              {"value":"Impaired relaxation","key":"1"},
-              {"value":"Pseudonormal","key":"2"},
-              {"value":"Restrictive","key":"3"}]
-          }},
-          {
-            "IVCdiameter": {
-              "label": "IVC diameter, mm",
-              "type": "number",
-              "name": "IVCdiameter",
-              "min": "0",
-              "max": "100"
-            }
-          },
-          {
-            "LeftAtriumVolume": {
-              "label": "Left atrium volume",
-              "type": "number",
-              "name": "LeftAtriumVolume",
-              "min": "0",
-              "max": "100"
-            }
-          },
-          {
-            "Notes":{
-              "label":"Notes",
-              "rows" : "5",
-              "cols" : "60",
-              "type":"text",
-              "name" : "notes"}
-          }
-  ],
   "TEE":[
     {
-    "DateOfProcedure":{
-      "label": "ECHO TEE before procedure date (DD/MM/YY)",
-      "type":"date",
-      "name":"echoDate"}
-    },
+      "DateOfProcedure":{
+        "label": "Echo Date: (DD/MM/YY)",
+        "type":"date",
+        "name":"echoDateTEE",
+        "min":"2000-01-01"}
+      },
     {
       "MR Severity_TEE": {
-        "label": "MR  Severity",
+        "label": "Mitral regurgitaiton severity",
         "list": "MrSeverity_TEE",
         "name": "MrSeverity_TEE",
         "type":"list",
+        "placeholder":" Select from a list:  Trace / Mild / Moderate / Moderate to severe / Severe  ",
         "inputs": [
-          {"value":"Trace","key":"0"},
-          {"value":"Mild","key":"1"},
-          {"value":"Moderate","key":"2"},
-          {"value":"Moderate to severe","key":"3"},
-          {"value":"Severe","key":"4"}]}
+          {"value":"Trace (0)","key":"0"},
+          {"value":"Mild (1+)","key":"1"},
+          {"value":"Moderate (2+)","key":"2"},
+          {"value":"Moderate to severe (3+)","key":"3"},
+          {"value":"Severe (4+)","key":"4"}]}
     },  
     {
-      "TR Severity": {
-        "label": "TR Severity",
-        "list": "TrSeverity",
-        "name": "TrSeverity",
+      "MVMeanGradient": {
+        "label": "MV Mean gradient(mmhg)",
+        "type": "number",
+        "name": "MVMeanGradient",
+        "min": "0",
+        "max": "20",
+        "placeholder":" [ 0 - 20] "
+      }
+    },
+    {
+      "MVPosteriorLeaflet": {
+        "label": "MV Posterior leaflet (mm)",
+        "type": "number",
+        "name": "MVPosteriorLeaflet",
+        "min": "0",
+        "max": "30",
+        "placeholder":" [ 0 - 30] "
+      }
+    },
+    {
+      "MVTethering": {
+        "label": "MV - Tethering",
+        "list": "MVTethering",
+        "name": "MVTethering",
         "type":"list",
+        "placeholder":" Select from a list:  No / Posterior / Anterior / Both  ",
         "inputs": [
-          {"value":"None","key":"0"},
-          {"value":"Mild","key":"1"},
-          {"value":"Moderate","key":"2"},
-          {"value":"Moderate to Severe","key":"3"},
-          {"value":"Severe","key":"4"},
-          {"value":"free TR","key":"5"}
+          {"value":"No","key":"0"},
+          {"value":"Posterior","key":"1"},
+          {"value":"Anterior","key":"2"},
+          {"value":"Both","key":"3"}]}
+    },  
+    {
+      "MVFlail": {
+        "label": "MV - Flail",
+        "list": "MVFlail",
+        "name": "MVFlail",
+        "type":"list",
+        "placeholder":" Select from a list:  No / Posterior / Anterior / Both  ",
+        "inputs": [
+          {"value":"No","key":"0"},
+          {"value":"Posterior","key":"1"},
+          {"value":"Anterior","key":"2"},
+          {"value":"Both","key":"3"}]}
+    },  
+    {
+      "MVProlapse": {
+        "label": "MV - Prolapse",
+        "list": "MVProlapse",
+        "name": "MVProlapse",
+        "type":"list",
+        "placeholder":" Select from a list:  No / Posterior / Anterior / Both  ",
+        "inputs": [
+          {"value":"No","key":"0"},
+          {"value":"Posterior","key":"1"},
+          {"value":"Anterior","key":"2"},
+          {"value":"Both","key":"3"}]}
+    },
+    {
+      "MRmechanism": {
+        "label": "MR mechanism",
+        "list": "MRmechanism",
+        "name": "MRmechanism",
+        "type":"list",
+        "placeholder":" Select from a list:  A2-P2 (central jet) / Non A2-P2 / Both ",
+        "inputs": [
+          {"value":"A2-P2 (central jet)","key":"1"},
+          {"value":"Non A2-P2","key":"2"},
+          {"value":"Both","key":"3"}]}
+    },
+    {
+      "PulmonaryVienSystolicFlow": {
+        "label": "Pulmonary vien - systolic flow",
+        "list": "PulmonaryVienSystolicFlow",
+        "name": "PulmonaryVienSystolicFlow",
+        "type":"list",
+        "placeholder":" Select from a list:  No / Revesal of flow ",
+        "inputs": [
+          {"value":"No","key":"0"},
+          {"value":"Revesal of flow","key":"1"}]}
+    }, 
+    {
+      "Other TEE parameters:":{
+        "titleOnly":"true"
+      }},
+    {
+      "Tricuspid regurgitaiton severity": {
+        "label": "Tricuspid regurgitaiton severity",
+        "list": "TricuspidRegurgitaitonSeverity",
+        "name": "TricuspidRegurgitaitonSeverity",
+        "type":"list",
+        "placeholder":" Select from a list:  No TR / Mild TR / Moderate TR / Severe TR / Massive / Torrential ",
+        "inputs": [
+          {"value":"No TR (0)","key":"0"},
+          {"value":"Mild TR (1)","key":"1"},
+          {"value":"Moderate TR (2)","key":"2"},
+          {"value":"Severe TR (3)","key":"3"},
+          {"value":"Massive (4)","key":"4"},
+          {"value":"Torrential (5)","key":"5"}
         ]
     }
   },
   {
-    "LaSmoke": {
-      "label": "LA Smoke (SEC)",
+    "Left atrial smoke (SEC)": {
+      "label": "Left atrial smoke (SEC)",
       "list": "LaSmoke",
       "name": "LaSmoke",
       "type":"list",
+      "placeholder":" Select from a list:  None / Grade 1 / Grade 2 / Grade 3 ",
       "inputs": [
         {"value":"None","key":"0"},
-        {"value":"Level 1","key":"1"},
-        {"value":"Level 2","key":"2"},
-        {"value":"Level 3","key":"3"}]}
-  }, 
-  {
-    "MvAnathomyPosteriorLeafletLeangth": {
-      "label": "MV anathomy - Posterior leaflet leangth (mm)",
-      "type": "number",
-      "name": "MvAnathomyPosteriorLeafletLeangth",
-      "min": "0",
-      "max": "100"
-    }
-  },
-  {
-    "MvAnathomyTethering": {
-      "label": "MV anathomy - tethering",
-      "list": "MvAnathomyTethering",
-      "name": "MvAnathomyTethering",
-      "type":"list",
-      "inputs": [
-        {"value":"No","key":"0"},
-        {"value":"Posterior","key":"1"},
-        {"value":"Anterior","key":"2"},
-        {"value":"Both","key":"3"}]}
-  }, 
-  {
-    "MrMechanismFlail": {
-      "label": "MR mechanism - Flail",
-      "list": "MrMechanismFlail",
-      "name": "MrMechanismFlail",
-      "type":"list",
-      "inputs": [
-        {"value":"No","key":"0"},
-        {"value":"Posterior","key":"1"},
-        {"value":"Anterior","key":"2"},
-        {"value":"Both","key":"3"}]}
-  },  
-  {
-    "MrMechanismFlail": {
-      "label": "MR mechanism - Flail",
-      "list": "MrMechanismFlail",
-      "name": "MrMechanismFlail",
-      "type":"list",
-      "inputs": [
-        {"value":"No","key":"0"},
-        {"value":"Posterior","key":"1"},
-        {"value":"Anterior","key":"2"},
-        {"value":"Both","key":"3"}]}
-  },  
-  {
-    "MrMechanismProlapse": {
-      "label": "MR mechanism - Prolapse",
-      "list": "MrMechanismProlapse",
-      "name": "MrMechanismProlapse",
-      "type":"list",
-      "inputs": [
-        {"value":"No","key":"0"},
-        {"value":"Posterior","key":"1"},
-        {"value":"Anterior","key":"2"},
-        {"value":"Both","key":"3"}]}
-  },
-  {
-    "MRmechanism": {
-      "label": "MR mechanism",
-      "list": "MRmechanism",
-      "name": "MRmechanism",
-      "type":"list",
-      "inputs": [
-        {"value":"A2-P2 (central jet)","key":"1"},
-        {"value":"Non A2-P2","key":"2"},
-        {"value":"Both","key":"3"}]}
-  },
-  {
-    "PulmonaryVeinsFlowDescription": {
-      "label": "Pulmonary veins flow description",
-      "list": "PulmonaryVeinsFlowDescription",
-      "name": "PulmonaryVeinsFlowDescription",
-      "type":"list",
-      "inputs": [
-        {"value":"No","key":"0"},
-        {"value":"revesal of flow","key":"1"}]}
+        {"value":"Grade 1","key":"1"},
+        {"value":"Grade 2","key":"2"},
+        {"value":"Grade 3","key":"3"}]}
   }, 
   {
     "ASD":{
-      "label":"ASD",
+      "label":"Atrial septal defect",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"ASD", "value":"1", "label": " Yes "},
         {"type":"radio", "name":"ASD", "value":"0", "label":" No "}]}
   }, 
   {
-    "ASDsize": {
-      "label": "ASD size",
-      "list": "ASDsize",
-      "name": "ASDsize",
-      "type":"list",
-      "inputs": [
-        {"value":"Small","key":"1"},
-        {"value":"Moderate","key":"2"},
-        {"value":"Large","key":"3"}]}
-  },
-  {
     "Shunt": {
       "label": "Shunt",
       "list": "Shunt",
       "name": "Shunt",
       "type":"list",
+      "placeholder":" Select from a list:  No / Right to left / Left to right / Bidirectional ",
       "inputs": [
         {"value":"No","key":"0"},
         {"value":"Right to left","key":"1"},
@@ -1284,27 +1297,22 @@
         {"value":"Bidirectional","key":"3"}]
   }},
   {
-    "Notes":{
-      "label":"Notes",
-      "rows" : "5",
-      "cols" : "60",
-      "type":"text",
-      "name" : "notes"}
-  }
-  ],
-  "Periprocedural TEE":[
+    "Periprocedural TEE:":{
+      "titleOnly":"true"
+    }},
     {
       "MR Severity": {
         "label": "MR Severity",
         "list": "MrSeverityTEE",
         "name": "MrSeverityTEE",
         "type":"list",
+        "placeholder":" Select from a list:  None / Mild / Moderate / Moderate to severe / Severe ",
         "inputs": [
-          {"value":"None","key":"0"},
-          {"value":"Mild","key":"1"},
-          {"value":"Moderate","key":"2"},
-          {"value":"Moderate to severe","key":"3"},
-          {"value":"Severe","key":"4"}]}
+          {"value":"None (0)","key":"0"},
+          {"value":"Mild (1)","key":"1"},
+          {"value":"Moderate (2)","key":"2"},
+          {"value":"Moderate to severe (3)","key":"3"},
+          {"value":"Severe (4)","key":"4"}]}
     }, 
     {
       "MeanMVgradient": {
@@ -1321,6 +1329,7 @@
         "list": "LaChomogenousContast",
         "name": "LaChomogenousContast",
         "type":"list",
+        "placeholder":" Select from a list:  None / Level 1 / Level 2 / Level 3 ",
         "inputs": [
           {"value":"None","key":"0"},
           {"value":"Level 1","key":"1"},
@@ -1341,6 +1350,7 @@
         "list": "ASD_PFOsize",
         "name": "ASD_PFOsize",
         "type":"list",
+        "placeholder":" Select from a list:  Small / Moderate / Large ",
         "inputs": [
           {"value":"Small","key":"1"},
           {"value":"Moderate","key":"2"},
@@ -1352,6 +1362,8 @@
           "list": "Shunt",
           "name": "Shunt",
           "type":"list",
+          "placeholder":" Select from a list:  No / Right to left / Left to right / Bidirectional ",
+
           "inputs": [
             {"value":"No","key":"0"},
             {"value":"Right to left","key":"1"},
@@ -1362,9 +1374,7 @@
         "VenaContracta": {
           "label": "Vena contracta, mm",
           "type": "number",
-          "name": "VenaContracta",
-          "min": "0",
-          "max": "100"
+          "name": "VenaContracta"
         }
       },
       {
@@ -1373,21 +1383,26 @@
           "rows" : "5",
           "cols" : "60",
           "type":"text",
-          "name" : "notes"}
+          "name" : "notes",
+          "placeholder":"Free text"}
       }
   ],
   "Cath":[
     {
-      "NumberVesselDisease": {
-        "label": "Number vessel disease",
+      "Left heart Cath:":{
+        "titleOnly":"true"
+      }},
+    {
+      "NumberVesselInvolved": {
+        "label": "Number of vessels involved",
         "type": "number",
-        "name": "NumberVesselDisease",
+        "name": "NumberVesselIisease",
         "min": "0",
         "max": "20"
       }
     },
     {"LmStenosis":{
-      "label":"LM stenosis > 50%",
+      "label":"Left Main stenosis >40% ",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"LmStenosis", "value":"1", "label": " Yes "},
@@ -1415,22 +1430,17 @@
         {"type":"radio", "name":"RCAstenosis", "value":"0", "label":" No "}]}
     },
     {"sp_cabg":{
-      "label":"S/P CABG",
+      "label":"Past CABG",
       "type":"radio",
       "inputs":
       [{"type":"radio", "name":"sp_cabg", "value":"1", "label": " Yes "},
         {"type":"radio", "name":"sp_cabg", "value":"0", "label":" No "}]}
     },
     {
-      "BaselineRightCardiacCathDate":{
-        "label": "Baseline right cardiac cath date",
-        "type":"date",
-        "name":"BaselineRightCardiacCathDate",
-        "min":"2011-01-01",
-        "required" : "true",
-        "mode":"must"
-      }
-    },
+      "Right heart Cath:":{
+        "titleOnly":"true"
+      }},
+
     {
       "LAPmean": {
         "label": "LAP mean (mmHg)",
@@ -1441,15 +1451,15 @@
       }
     },
     {"vWave":{
-      "label":"V wave",
-      "type":"radio",
-      "inputs":
-      [{"type":"radio", "name":"vWave", "value":"1", "label": " Yes "},
-        {"type":"radio", "name":"vWave", "value":"0", "label":" No "}]}
-    },
+      "label":"V wave (mmhm)",
+      "type": "number",
+      "name": "vWave",
+      "min": "0",
+      "max": "200"
+    }},
     {
       "meanPA": {
-        "label": "Mean PA",
+        "label": "Mean PA (mmhm)",
         "type": "number",
         "name": "meanPA",
         "min": "0",
@@ -1462,16 +1472,19 @@
         "rows" : "5",
         "cols" : "60",
         "type":"text",
-        "name" : "notes"}
+        "name" : "notes",
+        "placeholder":"Free text"}
     }
   ],
   "Periprocedural data":[
     {
       "VascularAccessVein": {
-        "label": "Vascular access: vein",
+        "label": "Vascular access- vein",
         "list": "VascularAccessVein",
         "name": "VascularAccessVein",
         "type":"list",
+        "placeholder":" Select from a list:  Right femoral vein / Others ",
+
         "inputs": [
           {"value":"Right femoral vein","key":"1"},
           {"value":"Others","key":"2"}]
@@ -1492,10 +1505,13 @@
           "list": "TypeOfClip",
           "name": "TypeOfClip",
           "type":"list",
+          "placeholder":" Select from a list:  XT / NTR / XTR / NTR+XTR",
+
           "inputs": [
             {"value":"XT","key":"0"},
             {"value":"NTR","key":"1"},
-            {"value":"XTR","key":"2"}]
+            {"value":"XTR","key":"2"},
+            {"value":"NTR+XTR","key":"3"}]
             }
           },
           {"AbortionOfProcedure":{
@@ -1539,19 +1555,19 @@
             }
           },
           {"preProcedureVWave":{
-            "label":"Pre-procedure V-wave",
-            "type":"radio",
-            "inputs":
-            [{"type":"radio", "name":"preProcedureVWave", "value":"1", "label": " Yes "},
-              {"type":"radio", "name":"preProcedureVWave", "value":"0", "label":" No "}]}
-          },
+            "label":"Pre-procedure V-wave (mmhm)",
+            "type": "number",
+            "name": "preProcedureVWave",
+            "min": "0",
+            "max": "200"
+          }},
           {"postProcedureVWave":{
-            "label":"Post-procedure V-wave",
-            "type":"radio",
-            "inputs":
-            [{"type":"radio", "name":"postProcedureVWave", "value":"1", "label": " Yes "},
-              {"type":"radio", "name":"postProcedureVWave", "value":"0", "label":" No "}]}
-          },
+            "label":"Post-procedure V-wave (mmhm)",
+            "type": "number",
+            "name": "postProcedureVWave",
+            "min": "0",
+            "max": "200"
+          }},
           {
             "PostProcedureSystolicBloodPressure": {
               "label": "Post-procedure Systolic blood pressure",
@@ -1576,6 +1592,8 @@
               "list": "PeriProcedureComplications",
               "name": "PeriProcedureComplications",
               "type":"list",
+              "placeholder":" Select from a list:  None / Embolozation / Others ",
+
               "inputs": [
                 {"value":"None","key":"0"},
                 {"value":"Embolozation","key":"1"},
@@ -1586,6 +1604,8 @@
                     "list": "DescriptionOfComplications",
                     "name": "DescriptionOfComplications",
                     "type":"list",
+                    "placeholder":" Select from a list:  Tamponde / Access site bleed / Convesion to surgery / Clip embolisation / Stroke ",
+
                     "inputs": [
                       {"value":"Tamponde","key":"1"},
                       {"value":"Access site bleed","key":"2"},
@@ -1615,8 +1635,8 @@
       "label":"Discharge status",
       "type":"radio",
       "inputs":
-      [{"type":"radio", "name":"Stable", "value":"1", "label": " Stable "},
-        {"type":"radio", "name":"Dead", "value":"0", "label":" Dead "}]}
+      [{"type":"radio", "name":"DischargeStatus", "value":"1", "label": " Stable "},
+        {"type":"radio", "name":"DischargeStatus", "value":"0", "label":" Decreased "}]}
     },
     {"Complications":{
       "label":"Complications",
@@ -1680,6 +1700,10 @@
         "min":"2011-01-01"
       }
     },
+    {
+      "Discharge Medications:":{
+        "titleOnly":"true"
+      }},
     {"DischargeAnticoagulants":{
       "label":"Discharge anticoagulants",
       "type":"radio",
@@ -1693,6 +1717,8 @@
         "list": "Antiplatelets",
         "name": "Antiplatelets",
         "type":"list",
+        "placeholder":" Select from a list:  No / Yes / DAPT ",
+
         "inputs": [
           {"value":"No","key":"0"},
           {"value":"Yes","key":"1"},
@@ -1738,7 +1764,8 @@
             "type": "number",
             "name": "FusidPerOsDosagePost",
             "min": "0",
-            "max": "240"}
+            "max": "240"
+          }
           },
           {"FusidIVDaycare":{
             "label":"Fusid IV daycare",
@@ -1749,10 +1776,12 @@
           },
           {
             "Disposition": {
-              "label": "MR Severity? (Worst measured)",
+              "label": "MR Severity (Worst measured)",
               "list": "MrSeverity",
               "name": "MrSeverity",
               "type":"list",
+              "placeholder":" Select from a list:  Home / Nursing home / Another hospital / Dead ",
+
               "inputs": [
                 {"value":"Home","key":"1"},
                 {"value":"Nursing home","key":"2"},
@@ -1765,7 +1794,8 @@
               "rows" : "5",
               "cols" : "60",
               "type":"text",
-              "name" : "notes"}
+              "name" : "notes",
+              "placeholder":"Free text"}
           }
 
 
@@ -1788,7 +1818,7 @@
     },
     {
       "Last known FU":{
-        "label": "Last known FU (D/M/Y)",
+        "label": "Last known follow up (D/M/Y)",
         "type":"date",
         "name":"Last known FU",
         "min":"2017-01-01"
@@ -1842,7 +1872,8 @@
         "rows" : "5",
         "cols" : "60",
         "type":"text",
-        "name" : "notes"}
+        "name" : "notes",
+        "placeholder":"Free text"}
     }
   ]
 }

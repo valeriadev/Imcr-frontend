@@ -67,7 +67,7 @@ export default class FormWrapper extends Component {
         else if (input[keyName].type === 'text') {
             return <IMCRTextarea {...input[keyName]}></IMCRTextarea>
         } else if (input[keyName].titleOnly === "true") {
-            return <h5>{keyName}</h5>
+            return <h5 class="title">{keyName}</h5>
         }
 
     }

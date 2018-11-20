@@ -83,7 +83,7 @@ export default class Login extends Component {
                 <section className="container">
                     <div className="login_heading">
                         <div className="login_body">
-                            <label for="email"> E-mail: </label>
+                            <label for="email"> Username </label>
                             <input id="email" type="email" name="email" onChange={this.emailChanged}/>
                             <label for="pass"> Password: </label>
                             <input id="pass" type="password" name="psw" onChange={this.passwordChanged}/>
