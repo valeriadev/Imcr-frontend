@@ -6,7 +6,7 @@ const cookies = require('browser-cookies');
 
 
 export function SubmitRecord(){
-    return(<button class="btn" style={{"width":"100%"}} onClick={sendRecord}>submit</button>);
+    return(<button class="btn" style={{"width":"160px"}} onClick={sendRecord}>submit</button>);
 }
 
 function sendRecord(){

@@ -57,7 +57,9 @@ export default class IMCRStep extends Component {
 
         const keys = Object.keys(fields);
         for (let i = 0; i < keys.length; i++) {
-            arr.push(<button class="w3-bar-item w3-button w3-hover-white" onClick={() => this.props.goToStep(i+1)}>{keys[i]}</button>)
+            <li><a href="#">Link</a></li>
+            arr.push(<li><a href="#" onClick={() => this.props.goToStep(i + 1)}>{keys[i]}</a></li>)
+            // class="w3-bar-item w3-button w3-hover-white"
             //arr.push(<a href="#" onclick="this.props.goToStep(i+1)" class="w3-bar-item w3-button w3-hover-white">{keys[i]}</a> )
         }
         return arr;
@@ -66,33 +68,44 @@ export default class IMCRStep extends Component {
 
 
 
+
     render() {
         return (<div >
-               <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-                    <a href="#">
-                        <img className="logo" src={logo} alt={"IMCR"}/>
-                    </a>
-                    {this.createNavigationBar()}
-                </nav>
-             <div className="card1">   
-            <h3>{this.props.stepName}</h3>
-            <form
-                ref={form => this.form = form} >
-                {this.props.children}
-            </form>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <img className="logo" src={logo} alt={"IMCR"} />
 
-                {this.props.currentStep > 1 ? <button class="btn btn-info" style={{"width":"100%"}} onClick={this.props.previousStep}>Previous Step</button>: null}
-                {this.props.currentStep < this.props.totalSteps ? <button style={{"width":"100%"}} class="btn btn-primary" onClick={this.validateForm}>Next Step</button> : null}
+                        </a>
+
+                    </div>
+                    <div >
+                        <ul class="nav navbar-nav">
+                            {this.createNavigationBar()}
+                        </ul>
+                        </div>
+                </div>
+            </nav>
+            <div className="card1">
+                <h3>{this.props.stepName}</h3>
+                <form
+                    ref={form => this.form = form} >
+                    {this.props.children}
+                </form>
+
+                {this.props.currentStep > 1 ? <button class="btn btn-info" style={{ "width": "160px" }} onClick={this.props.previousStep}>Previous Step</button> : null}
+                {this.props.currentStep < this.props.totalSteps ? <button style={{ "width": "160px" }} class="btn btn-primary" onClick={this.validateForm}>Next Step</button> : null}
 
 
                 {this.props.currentStep === this.props.totalSteps ? <SubmitRecord></SubmitRecord>
                     : null}
 
-            <p class="text-center">{this.props.currentStep} / {this.props.totalSteps}</p>
+                <p class="text-center">{this.props.currentStep} / {this.props.totalSteps}</p>
 
 
-      </div>
-  </div>);
+            </div>
+        </div>);
     }
 }
 
