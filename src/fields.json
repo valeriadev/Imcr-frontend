@@ -1,5 +1,5 @@
 {
-  "Company data":[
+  "Clinical data":[
     {"Hospital": {
       "label": "Hospital",
       "list": "hospitals",
@@ -26,7 +26,8 @@
         "type": "number",
         "name": "ProcedureNumber",
         "min": "0",
-        "max": "99999999999"
+        "max": "99999999999",
+        "required" : "true"
       }
     },
     {
@@ -98,39 +99,6 @@
         "type": "number",
         "name": "BSA"
       }
-    },
-    {
-      "SuccessfulProcedure":{
-        "label":"Successful Procedure ",
-        "type":"radio",
-        "inputs":
-        [{"type":"radio", "name":"successfulProcedure", "value":"1", "label": " Yes "},
-          {"type":"radio", "name":"successfulProcedure", "value":"0", "label":" No "}]},
-      "mode":"warn"
-    },
-    {
-      "NumberOfClips": {
-        "label": "Number of clips",
-        "type": "number",
-        "name": "numberOfClips",
-        "min": "0",
-        "max": "5",
-        "placeholder":"Min: 0, max: 5",
-        "step":"1",
-        "mode":"warn"
-      }
-    },
-    {
-      "ProcedureUrgency": {
-        "label": "Procedure Urgency",
-        "list": "ProcedureUrgency",
-        "name": "ProcedureUrgency",
-        "type":"list",
-        "inputs": [
-          {"value":"Elective","key":"1"},
-          {"value":"Emergent","key":"2"},
-          {"value":"Urgent","key":"3"}],
-        "mode":"warn"}
     },
     {
       "Notes":{
@@ -261,9 +229,17 @@
         "inputs":
         [{"type":"radio", "name":"OncologicDisease", "value":"1", "label": " Yes "},
           {"type":"radio", "name":"OncologicDisease", "value":"0", "label":" No "}]}
+    },
+    {
+      "Notes":{
+        "label":"Notes",
+        "rows" : "5",
+        "cols" : "60",
+        "type":"text",
+        "name" : "notes"}
     }
   ],
-  "HeartFailureData":[
+  "Heart Failure Data":[
     {
       "PreviousMitraClipBoolean":{
         "label":"Previous MitraClip?",
@@ -420,8 +396,16 @@
       "name": "sixMWT",
       "min": "0",
       "max": "1000"}
+    },
+    {
+      "Notes":{
+        "label":"Notes",
+        "rows" : "5",
+        "cols" : "60",
+        "type":"text",
+        "name" : "notes"}
     }],
-  "MedicalTherapy:":[
+  "Medical Therapy:":[
     {
       "Antiplatelets":{
         "label":"Antipleteles?",
@@ -500,8 +484,16 @@
         "inputs":
         [{"type":"radio", "name":"fusidIvDaycare", "value":"1", "label": " Yes "},
           {"type":"radio", "name":"fusidIvDaycare", "value":"0", "label":" No "}]}
+    },
+    {
+      "Notes":{
+        "label":"Notes",
+        "rows" : "5",
+        "cols" : "60",
+        "type":"text",
+        "name" : "notes"}
     }],
-  "RiskOfSurgery":[
+  "Risk Of Surgery":[
     {"euroscore2": {
       "label": "Euroscore2 (%)",
       "type": "number",
@@ -515,8 +507,16 @@
       "name": "sts_score",
       "min": "0",
       "max": "100"}
+    },
+    {
+      "Notes":{
+        "label":"Notes",
+        "rows" : "5",
+        "cols" : "60",
+        "type":"text",
+        "name" : "notes"}
     }],
-  "LABresults":[
+  "LAB results":[
     {"hemoglobin_g_dL": {
       "label": "Hemoglobin (g/dL) - choose one",
       "type": "number",
@@ -588,7 +588,7 @@
       "type":"date",
       "name":"echoDate"}
     }],
-    "TTE_Left_Ventricle":[
+    "TTE Left Ventricle":[
     {
       "LVEDd": {
         "label": "LVEDd (mm)",
@@ -660,8 +660,15 @@
         "max": "300",
         "placeholder":"min: 20, max: 300"
       }
+    }, {
+      "Notes":{
+        "label":"Notes",
+        "rows" : "5",
+        "cols" : "60",
+        "type":"text",
+        "name" : "notes"}
     }],
-    "TTE_Mitral_Valve":[
+    "TTE Mitral Valve":[
       {
         "MitralAnulusCacification":{
           "label":"Mitral anulus cacification?",
@@ -724,8 +731,16 @@
         "max": "100",
         "placeholder":"min: 1, max: 100"
       }
+    },
+    {
+      "Notes":{
+        "label":"Notes",
+        "rows" : "5",
+        "cols" : "60",
+        "type":"text",
+        "name" : "notes"}
     }],
-    "TTE_Aortic_Valve":[
+    "TTE Aortic Valve":[
     {
       "AorticStenosisPresent":{
         "label":"Aortic stenosis present?",
@@ -764,9 +779,17 @@
         "max": "4",
         "placeholder":"min: 0.1, max: 4"
       }
+    },
+    {
+      "Notes":{
+        "label":"Notes",
+        "rows" : "5",
+        "cols" : "60",
+        "type":"text",
+        "name" : "notes"}
     }
   ],
-"TTE_Other_parameters":[
+"TTE Other parameters":[
   {
     "TricuspidRegurgitationSeverity": {
       "label": "Tricuspid Regurgitation Severity",
@@ -915,7 +938,15 @@
                   {"value":"Right to left","key":"1"},
                   {"value":"Left to right","key":"2"},
                   {"value":"Bidirectional","key":"3"}]
-            }}
+            }},
+            {
+              "Notes":{
+                "label":"Notes",
+                "rows" : "5",
+                "cols" : "60",
+                "type":"text",
+                "name" : "notes"}
+            }
 ],
   "TEE: Post-procedural echocardiographic data":[
     {
@@ -1082,6 +1113,14 @@
               "min": "0",
               "max": "100"
             }
+          },
+          {
+            "Notes":{
+              "label":"Notes",
+              "rows" : "5",
+              "cols" : "60",
+              "type":"text",
+              "name" : "notes"}
           }
   ],
   "TEE":[
@@ -1106,7 +1145,7 @@
     },  
     {
       "TR Severity": {
-        "label": "",
+        "label": "TR Severity",
         "list": "TrSeverity",
         "name": "TrSeverity",
         "type":"list",
@@ -1240,7 +1279,15 @@
         {"value":"Right to left","key":"1"},
         {"value":"Left to right","key":"2"},
         {"value":"Bidirectional","key":"3"}]
-  }}
+  }},
+  {
+    "Notes":{
+      "label":"Notes",
+      "rows" : "5",
+      "cols" : "60",
+      "type":"text",
+      "name" : "notes"}
+  }
   ],
   "Periprocedural TEE":[
     {
@@ -1316,6 +1363,14 @@
           "min": "0",
           "max": "100"
         }
+      },
+      {
+        "Notes":{
+          "label":"Notes",
+          "rows" : "5",
+          "cols" : "60",
+          "type":"text",
+          "name" : "notes"}
       }
   ],
   "Cath":[
@@ -1397,6 +1452,14 @@
         "min": "0",
         "max": "200"
       }
+    },
+    {
+      "Notes":{
+        "label":"Notes",
+        "rows" : "5",
+        "cols" : "60",
+        "type":"text",
+        "name" : "notes"}
     }
   ],
   "Periprocedural data":[
@@ -1448,7 +1511,7 @@
           },
           {
             "Concomitant procedures if yes description":{
-              "label":"Notes",
+              "label":"Concomitant procedures if yes description",
               "rows" : "5",
               "cols" : "60",
               "type":"text",
@@ -1544,7 +1607,7 @@
                     "name" : "DetailsOtherCardiacProcedures"}
                 }
   ],
-  "PostproceduralData":[
+  "Postprocedural Data":[
     {"DischargeStatus":{
       "label":"Discharge status",
       "type":"radio",
@@ -1692,8 +1755,91 @@
                 {"value":"Nursing home","key":"2"},
                 {"value":"Another hospital","key":"3"},
                 {"value":"Dead","key":"4"}]}
+          },
+          {
+            "Notes":{
+              "label":"Notes",
+              "rows" : "5",
+              "cols" : "60",
+              "type":"text",
+              "name" : "notes"}
           }
 
 
+  ],
+  "Mortality Data":[
+    {"Alive":{
+      "label":"Alive",
+      "type":"radio",
+      "inputs":
+      [{"type":"radio", "name":"Alive", "value":"1", "label": " Yes "},
+        {"type":"radio", "name":"Alive", "value":"0", "label":" No "}]}
+    },
+    {
+      "Mortality date":{
+        "label": "Mortality date (D/M/Y)",
+        "type":"date",
+        "name":"Mortality date",
+        "min":"2017-01-01"
+      }
+    },
+    {
+      "Last known FU":{
+        "label": "Last known FU (D/M/Y)",
+        "type":"date",
+        "name":"Last known FU",
+        "min":"2017-01-01"
+      }
+    },	
+    {"Procedural mortality":{
+      "label":"Procedural mortality",
+      "type":"radio",
+      "inputs":
+      [{"type":"radio", "name":"ProceduralMortality", "value":"1", "label": " Yes "},
+        {"type":"radio", "name":"ProceduralMortality", "value":"0", "label":" No "}]}
+    },
+    {"Post-Procedure but in-hospital cardiovascular mortality":{
+      "label":"Post-procedure but in-hospital cardiovascular mortality",
+      "type":"radio",
+      "inputs":
+      [{"type":"radio", "name":"PostProcedureButInHospitalCardiovascularMortality", "value":"1", "label": " Yes "},
+        {"type":"radio", "name":"PostProcedureButInHospitalCardiovascularMortality", "value":"0", "label":" No "}]}
+    },
+    {"Post-procedure but in-hospital non-cardiovascular mortality":{
+      "label":"Post-procedure but in-hospital non-cardiovascular mortality",
+      "type":"radio",
+      "inputs":
+      [{"type":"radio", "name":"PostProcedureButInHospitalNonCardiovascularMortality", "value":"1", "label": " Yes "},
+        {"type":"radio", "name":"PostProcedureButInHospitalNonCardiovascularMortality", "value":"0", "label":" No "}]}
+    },
+    {"Out of hospital  Cardiovascular mortality":{
+      "label":"Out of hospital  Cardiovascular mortality",
+      "type":"radio",
+      "inputs":
+      [{"type":"radio", "name":"OutOfHospitalCardiovascularMortality", "value":"1", "label": " Yes "},
+        {"type":"radio", "name":"OutOfHospitalCardiovascularMortality", "value":"0", "label":" No "}]}
+    },
+    {"Out of hospital non-cardiovascular mortality":{
+      "label":"Out of hospital non-cardiovascular mortality",
+      "type":"radio",
+      "inputs":
+      [{"type":"radio", "name":"OutOfHospitalNonCardiovascularMortality", "value":"1", "label": " Yes "},
+        {"type":"radio", "name":"OutOfHospitalNonCardiovascularMortality", "value":"0", "label":" No "}]}
+    },
+    {"Out of hospital Unknown mortality":{
+      "label":"Out of hospital Unknown mortality",
+      "type":"radio",
+      "inputs":
+      [{"type":"radio", "name":"OutOfHospitalUnknownMortality", "value":"1", "label": " Yes "},
+        {"type":"radio", "name":"OutOfHospitalUnknownMortality", "value":"0", "label":" No "}]}
+    },
+    {
+      "Notes":{
+        "label":"Notes",
+        "rows" : "5",
+        "cols" : "60",
+        "type":"text",
+        "name" : "notes"}
+    }
   ]
 }
