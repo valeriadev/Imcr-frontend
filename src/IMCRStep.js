@@ -57,7 +57,12 @@ export default class IMCRStep extends Component {
 
         const keys = Object.keys(fields);
         for (let i = 0; i < keys.length; i++) {
-            arr.push(<li><a href="#" onClick={() => this.props.goToStep(i + 1)}>{keys[i]}</a></li>)
+
+            let classString = "";
+            if(i + 1 === this.props.currentStep){
+                classString = "underline"
+            }
+            arr.push(<li class={classString}><a href="#" onClick={() => this.props.goToStep(i + 1)}>{keys[i]}</a></li>)
             // class="w3-bar-item w3-button w3-hover-white"
             //arr.push(<a href="#" onclick="this.props.goToStep(i+1)" class="w3-bar-item w3-button w3-hover-white">{keys[i]}</a> )
         }
@@ -71,23 +76,22 @@ export default class IMCRStep extends Component {
     render() {
         return (<div >
             <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container-fluid">
+                <div class="container-fluid" style={{ "justify-content": "flex-start"}}>
                     <div class="navbar-header">
                         <a class="navbar-brand" href="#">
                             <img className="logo" src={logo} alt={"IMCR"} />
 
                         </a>
 
+                     
                     </div>
-                    <div >
-                        <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav" style={{"flex-direction":"row"}}>
                             {this.createNavigationBar()}
                         </ul>
-                        </div>
                 </div>
             </nav>
             <div className="card1">
-                <h3>{this.props.stepName}</h3>
+                <h3 style={{ "margin": "1em" }}>{this.props.stepName}</h3>
                 <form
                     ref={form => this.form = form} >
                     {this.props.children}
