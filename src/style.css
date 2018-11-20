@@ -230,3 +230,13 @@ h3{text-align:center}
 
 .radio{width:24px;height:24px;position:relative;top:6px;cursor: default;}
 
+
+
+.IMCRField {
+    margin: 0.5em
+}
+
+.IMCRField  input{
+    margin-left: 6.5em
+
+}
