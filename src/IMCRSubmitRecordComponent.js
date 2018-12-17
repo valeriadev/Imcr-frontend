@@ -1,6 +1,7 @@
 import React from 'react';
 import {getRecord} from './mitraClipRecord';
 import {api} from "./config";
+import axios from 'axios';
 const cookies = require('browser-cookies');
 
 
@@ -10,22 +11,22 @@ export function SubmitRecord(){
 }
 
 function sendRecord(){
-    fetch(`${api}/record?token=${cookies.get("imcr-token")}`, {
+    let data = getRecord();
+    console.log(data);
+    
+    
+    axios(`${api}/record?token=${cookies.get("imcr-token")}`, {
         method:'post',
         credentials: 'include',
         headers: {
-            'Content-Type': 'application/json',
-            'Cookie':document.cookie
+            'Content-Type': 'application/json'
           },
-        body: JSON.stringify(getRecord())
+        data: getRecord()
     }).then((res)=>{
-        if(res.status===200){
             console.log("send record sucssefuly");
             alert('Record has been sent')
-        }
-        else{
-            alert('opsss..... something went wrong')
-            console.error("wrong send record");
-        }
+    }).catch((err)=>{
+        alert('opsss..... something went wrong')
+        console.error("wrong send record");
     })
 }

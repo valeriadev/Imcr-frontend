@@ -18,7 +18,7 @@ export default class IMCRStep extends Component {
         e.preventDefault();
 
         try {
-            if (this.form.reportValidity()) {
+            if (1 === 1) {
 
                 const allFieldsInStep = fields[this.props.stepName];
 

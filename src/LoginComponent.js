@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from './IMCR-LOGO.png';
 import {api} from "./config";
+import axios from 'axios';
 
 const cookies = require('browser-cookies');
 
@@ -41,16 +42,10 @@ export default class Login extends Component {
 
 
     login() {
-        fetch(`${api}/login?username=${this.state.email}&password=${this.state.password}`)
-            .then((res) => {
-                if (res.status === 401) {
-                    throw new Error();
-                } else {
-                    return res.json()
-                }
-            })
+        //
+        axios(`${api}/login?username=${this.state.email}&password=${this.state.password}`)
             .then((json) => {
-                cookies.set("imcr-token",json.token);
+                cookies.set("imcr-token",json.data.token);
                 this.props.onLogin();
             })
             .catch((err)=>{
