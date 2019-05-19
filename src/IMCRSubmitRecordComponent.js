@@ -1,32 +1,78 @@
-import React from 'react';
-import {getRecord} from './mitraClipRecord';
-import {api} from "./config";
-import axios from 'axios';
-const cookies = require('browser-cookies');
+import * as userService from "./user.service";
+import { getRecord } from "./mitraClipRecord";
+import React , {Component} from "react";
+import { api } from "./config";
+import axios from "axios";
+const cookies = require("browser-cookies");
 
+export class SubmitRecord extends Component {
+  constructor(){
+    super();
 
+    this.sendRecord = this.sendRecord.bind(this);
+    this.getEndpoint = this.getEndpoint.bind(this);
 
-export function SubmitRecord(){
-    return(<button class="btn" style={{"width":"160px", "margin-top":".5em"}} onClick={sendRecord}>Submit</button>);
+    this.state = {
+      sending:false
+    }
+  }
+  render(){
+    let extra = {disabled:false}
+    if(this.state.sending){
+        extra.disabled=true;
+    } 
+    return (
+      <button
+      class="btn"
+
+      style={{ width: "160px", "margin-top": ".5em" }}
+      onClick={this.sendRecord}
+      {...extra}
+    >
+      Submit
+    </button>
+  );
 }
 
-function sendRecord(){
-    let data = getRecord();
-    console.log(data);
-    
-    
-    axios(`${api}/record?token=${cookies.get("imcr-token")}`, {
-        method:'post',
-        credentials: 'include',
-        headers: {
-            'Content-Type': 'application/json'
-          },
-        data: getRecord()
-    }).then((res)=>{
-            console.log("send record sucssefuly");
-            alert('Record has been sent')
-    }).catch((err)=>{
-        alert('opsss..... something went wrong')
-        console.error("wrong send record");
+ sendRecord() {
+  let data = getRecord();
+  console.log(data);
+
+  axios(`${api}/${this.getEndpoint()}?token=${cookies.get("imcr-token")}`, {
+    method: "post",
+    crossdomain: true,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    data: getRecord()
+  })
+    .then(res => {
+
+    this.setState({
+      sending:false
     })
+      console.log("send record sucssefuly");
+      alert("Record has been sent");
+    })
+    .catch(err => {
+
+    this.setState({
+      sending:false
+    })
+      alert("opsss..... something went wrong");
+      console.error("wrong send record");
+    });
+
+    this.setState({
+      sending:true
+    })
+}
+
+ getEndpoint() {
+  return userService.getUserType() ===
+    userService.KnownType.administratorAccount
+    ? "abbott"
+    : "record";
+}
+
 }

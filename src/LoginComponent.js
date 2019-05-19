@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import logo from './IMCR-LOGO.png';
 import {api} from "./config";
 import axios from 'axios';
+import * as userService from "./user.service";
 
 const cookies = require('browser-cookies');
 
@@ -46,6 +47,7 @@ export default class Login extends Component {
         axios(`${api}/login?username=${this.state.email}&password=${this.state.password}`)
             .then((json) => {
                 cookies.set("imcr-token",json.data.token);
+                userService.setUserType(json.data.type)
                 this.props.onLogin();
             })
             .catch((err)=>{

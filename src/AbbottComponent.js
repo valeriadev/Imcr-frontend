@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import fields from "./fields.json";
+import fields from "./fields-abbott.json";
 import IMCRInput from "./ImcrInputComponent.js";
 import IMCRListOptions from "./IMCRListComponent.js";
 import IMCRRadio from "./IMCRRadioComponent.js";
 import IMCRTextarea from "./IMCRTextareaComponent.js";
 import IMCRStep from "./IMCRStep.js";
 import StepWizard from "react-step-wizard";
-import { set, getByKey } from "./mitraClipRecord";
-import * as api from "./api.service"
+import { set } from "./mitraClipRecord";
+import { SubmitRecord } from "./IMCRSubmitRecordComponent.js";
 
-export default class FormWrapper extends Component {
+export default class AbbottComponent extends Component {
   constructor() {
     super();
     this.state = {
@@ -18,13 +18,6 @@ export default class FormWrapper extends Component {
 
     this.initData();
     this.emptyValue = "@@IMCR@@";
-
-    this.dataChanged = this.dataChanged.bind(this);
-    api.registerDataChnage(this.dataChanged)
-  }
-
-  dataChanged(){
-    this.forceUpdate();
   }
 
   initData() {
@@ -58,14 +51,8 @@ export default class FormWrapper extends Component {
 
   getComponent(input) {
     let keyName = Object.keys(input)[0];
-    const value = getByKey(input[keyName].name);
-    if (!value || value === this.emptyValue) {
-      set(input[keyName].name, this.emptyValue);
-       delete input[keyName].realValue;
-       input[keyName].bust = Math.floor(Math.random() * 99999) + 1000  
-    } else {
-      input[keyName].realValue = value;
-    }
+    set(input[keyName].name, this.emptyValue);
+
     if (
       input[keyName].type === "number" ||
       input[keyName].type === "date" ||
@@ -87,16 +74,11 @@ export default class FormWrapper extends Component {
     return (
       <div>
         <section>
-          <StepWizard initialStep={1}>
-            {this.state.steps.map(step => {
-              return (
-                <IMCRStep stepName={step}>
-                  {this.getComponnetForStep(step)}
+                <IMCRStep stepName={this.state.steps[0]}>
+                  {this.getComponnetForStep(this.state.steps[0])}
                 </IMCRStep>
-              );
-            })}
-          </StepWizard>
         </section>
+
 
         <footer />
       </div>

@@ -1,0 +1,147 @@
+{
+  "Procedure Data": [
+    {
+      "Hospital": {
+        "label": "Hospital",
+        "list": "hospitals",
+        "name": "hospitals",
+        "type": "list",
+        "placeholder": "Select from a list, required field *",
+        "inputs": [
+          { "value": "KAPLAN", "key": "1" },
+          { "value": "HADASA", "key": "2" },
+          { "value": "SHEBA", "key": "3" },
+          { "value": "ICHIILOV", "key": "4" },
+          { "value": "SHARRE TZEDEQ", "key": "5" },
+          { "value": "RAMBAM", "key": "6" },
+          { "value": "SOROKA", "key": "6" },
+          { "value": "PORIYA", "key": "7" },
+          { "value": "BELINSON", "key": "8" },
+          { "value": "CARMEL", "key": "9" },
+          { "value": "WOLFSON", "key": "10" }
+        ],
+        "required": "true",
+        "mode": "must"
+      }
+    },
+    {
+      "DateOfProcedure": {
+        "label": "Date of procedure",
+        "type": "date",
+        "name": "dateOfProcedure",
+        "min": "2011-01-01",
+        "required": "true",
+        "mode": "must"
+      }
+    },
+    {
+      "ProcedureNumberAtDate": {
+        "label": "Day Procedure Number",
+        "type": "number",
+        "name": "ProcedureNumberAtDate",
+        "min": "0",
+        "max": "99999999999",
+        "required": "true",
+        "placeholder": "required field *"
+      }
+    },
+
+    {
+      "YearOfBirth": {
+        "label": "Year of birth",
+        "type": "month",
+        "name": "yearOfBirth",
+        "min": "1900-01-01",
+        "max": "2000-01-01",
+        "mode": "warn"
+      }
+    },
+    {
+      "Gender": {
+        "label": "Gender ",
+        "name": "Gender",
+        "type": "radio",
+        "inputs": [
+          {
+            "type": "radio",
+            "name": "Gender",
+            "value": "0",
+            "label": " Male "
+          },
+          {
+            "type": "radio",
+            "name": "Gender",
+            "value": "1",
+            "label": " Female "
+          }
+        ]
+      },
+      "mode": "warn"
+    },
+    {
+      "MRmechanism": {
+        "label": "MR Mechanism",
+        "list": "MRMechanism",
+        "name": "MRMechanism",
+        "type": "list",
+        "placeholder": " MR Mechanism",
+        "inputs": [
+          { "value": "Primary", "key": "0" },
+          { "value": "Secondary", "key": "1" },
+          { "value": "Mixed", "key": "2" }
+        ]
+      }
+    },
+    {
+      "ProcedureEmergency": {
+        "label": "Procedure Urgency",
+        "list": "ProcedureEmergency",
+        "name": "ProcedureEmergency",
+        "type": "list",
+        "placeholder": " Elective / Urgent",
+        "inputs": [
+          { "value": "Elective", "key": "0" },
+          { "value": "Urgent", "key": "1" }
+        ]
+      }
+    },
+    {"Successful":{
+      "label":"Procedure - Successful?",
+      "name":"Successful",
+      "type":"radio",
+      "inputs":
+      [{"type":"radio", "name":"Successful", "value":"1", "label": " Yes "},
+        {"type":"radio", "name":"Successful", "value":"0", "label":" No "}]}
+    },
+    {
+      "HowManyClips": {
+        "label": "How many clips",
+        "type": "number",
+        "name": "clipCount",
+        "min": "1",
+        "max": "5",
+        "placeholder": " [ 1 - 5 ] "
+      }
+    },
+    {
+      "ClipTypes": {
+        "label": "Clip Types",
+        "rows": "5",
+        "cols": "60",
+        "type": "text",
+        "name": "clipTypes",
+        "placeholder": "Free text"
+      }
+    },
+    {
+      "Notes": {
+        "label": "Notes",
+        "rows": "5",
+        "cols": "60",
+        "type": "text",
+        "name": "notes1",
+        "placeholder": "Free text"
+      }
+    }
+  ]
+}

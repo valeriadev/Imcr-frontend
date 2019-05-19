@@ -1,14 +1,41 @@
-import React from 'react';
-import { set } from './mitraClipRecord';
+import React, { Component } from "react";
+import { set, getByKey } from "./mitraClipRecord";
 
-export default function IMCRListOptions(props) {
-
+export default class IMCRListOptions extends Component {
+  render() {
     let inputs = [];
-    for (let i = 0; i < props.inputs.length; i++) {
-        inputs.push(<option key={i} value={props.inputs[i].value} />);
+    for (let i = 0; i < this.props.inputs.length; i++) {
+      if (this.props.inputs[i].value == this.props.realValue) {
+        inputs.push(<option key={i} value={this.props.inputs[i].value} />);
+      } else {
+        inputs.push(<option key={i} value={this.props.inputs[i].value} />);
+      }
     }
-    return (<div class={"IMCRField"}> {props.label}:
-    <input list={props.name} {...props} onChange={(event) => set(props.name, event.target.value)} />
-        <datalist id={props.name}>{inputs}</datalist>
-    </div>);
+
+    let moreProps = {};
+
+    if (this.props.realValue) {
+      const valueInStore = getByKey(this.props.name);
+      if (valueInStore == "@@IMCR@@") {
+        moreProps.value = this.props.realValue;
+      } else {
+        moreProps.value = valueInStore;
+      }
+    }
+    return (
+      <div class={"IMCRField"}>
+        {" "}
+        {this.props.label}:
+        <input
+          list={this.props.name}
+          {...this.props}
+          onChange={(event) =>{ 
+            set(event.target.name, event.target.value); 
+            this.forceUpdate();}}
+          {...moreProps}
+        />
+        <datalist id={this.props.name}>{inputs}</datalist>
+      </div>
+    );
+  }
 }

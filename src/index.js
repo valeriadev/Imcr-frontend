@@ -4,6 +4,8 @@ import './style.css';
 import Login from './LoginComponent';
 import FormWrapper from './formWrapperComponent';
 import 'bootstrap/dist/css/bootstrap.css';
+import * as userService from "./user.service";
+import AbbottComponent from "./AbbottComponent";
 
 
 
@@ -27,8 +29,7 @@ class App extends Component {
 
     getMainComponent() {
         if (this.state.login) {
-           // return <StepOne></StepOne>;
-           return <FormWrapper></FormWrapper>;
+            return userService.getUserType() === userService.KnownType.hospitalUser ? <FormWrapper></FormWrapper>:<AbbottComponent></AbbottComponent> ;
         } else {
             return <Login onLogin={this.onLogin}></Login>;
         }
