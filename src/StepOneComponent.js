@@ -32,7 +32,7 @@ export default class StepOne extends Component {
                     [{type:"radio", name:"gender", value:"0", label: " Male "},
                         {type:"radio", name:"gender", value:"1", label:" Female "}]
             },
-            Birthday: {label:"Birthday " ,type:"month", name:"bdaymonth"},
+            Birthday: {label:"Birthday " ,type:"number", name:"bdaymonth", min:"1900", max:"2100"},
             Height: {label:"Height (cm) ", type:"number", name:"height", onChange:this.heightChanged, min:"50", max:"260"}
 
         };

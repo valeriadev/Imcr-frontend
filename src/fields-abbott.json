@@ -49,10 +49,10 @@
     {
       "YearOfBirth": {
         "label": "Year of birth",
-        "type": "month",
+        "type": "number",
         "name": "yearOfBirth",
-        "min": "1900-01-01",
-        "max": "2000-01-01",
+        "min": "1900",
+        "max": "2020",
         "mode": "warn"
       }
     },

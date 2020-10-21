@@ -53,11 +53,12 @@
     {
       "YearOfBirth": {
         "label": "Year of birth",
-        "type": "month",
+        "type": "number",
         "name": "yearOfBirth",
         "min": "1900-01-01",
-        "max": "2000-01-01",
-        "mode": "warn"
+        "max": "2100-01-01",
+        "mode": "warn",
+        "placeholder": " [ 1900 - 2020 ] "
       }
     },
     {
@@ -583,13 +584,12 @@
         "list": "mobility",
         "name": "mobility",
         "type": "list",
-        "placeholder": " Select from a list:  No /  Walker / Cane / Wheelchair / Bedridden ",
+        "placeholder": " Select from a list: Walker / Cane / Wheelchair / Bedridden ",
         "inputs": [
-          { "value": "No", "key": "o" },
-          { "value": "Walker", "key": "1" },
-          { "value": "Cane", "key": "2" },
-          { "value": "Wheelchair", "key": "3" },
-          { "value": "Bedridden", "key": "4" }
+          { "value": "Walker (1+)", "key": "1" },
+          { "value": "Cane (2+)", "key": "2" },
+          { "value": "Wheelchair (3+)", "key": "3" },
+          { "value": "Bedridden (4+)", "key": "4" }
         ]
       }
     },
@@ -601,11 +601,11 @@
         "type": "list",
         "placeholder": " Select from a list:  No /  Ankle / Shin / Thigh / Anasarca ",
         "inputs": [
-          { "value": "No", "key": "o" },
-          { "value": "Ankle", "key": "1" },
-          { "value": "Shin", "key": "2" },
-          { "value": "Thigh", "key": "3" },
-          { "value": "Anasarca", "key": "4" }
+          { "value": "No (0)", "key": "o" },
+          { "value": "Ankle (1+)", "key": "1" },
+          { "value": "Shin (2+)", "key": "2" },
+          { "value": "Thigh (3+)", "key": "3" },
+          { "value": "Anasarca (4+)", "key": "4" }
         ]
       }
     },
@@ -1403,12 +1403,13 @@
         "list": "PostProcedureLvDysfunction",
         "name": "PostProcedureLvDysfunction",
         "type": "list",
-        "placeholder": " Select from a list:   Mild / Moderate / Moderate to severe / Severe  ",
+        "placeholder": " Select from a list:  Normal / Mild / Moderate / Moderate to severe / Severe  ",
         "inputs": [
-          { "value": "Mild", "key": "1" },
-          { "value": "Moderate", "key": "2" },
-          { "value": "Moderate to severe", "key": "3" },
-          { "value": "Severe", "key": "4" }
+          { "value": "Normal (0)", "key": "0" },
+          { "value": "Mild (1)", "key": "1" },
+          { "value": "Moderate (2)", "key": "2" },
+          { "value": "Moderate to severe (3)", "key": "3" },
+          { "value": "Severe (4)", "key": "4" }
         ]
       }
     },
@@ -1425,8 +1426,9 @@
         "list": "Post-precedure MR",
         "name": "Post-precedure MR",
         "type": "list",
-        "placeholder": " Select from a list:   Mild / Moderate / Moderate to severe / Severe  ",
+        "placeholder": " Select from a list:  Minimal/No / Mild / Moderate / Moderate to severe / Severe  ",
         "inputs": [
+          { "value": "Minimal/No (0)", "key": "0" },
           { "value": "Mild (1)", "key": "1" },
           { "value": "Moderate (2)", "key": "2" },
           { "value": "Moderate to severe (3)", "key": "3" },
@@ -1447,8 +1449,9 @@
         "list": "TrSeverityColor",
         "name": "TrSeverityColor",
         "type": "list",
-        "placeholder": " Select from a list:   Mild / Moderate /  Severe / Massive / Torrential ",
+        "placeholder": " Select from a list:  Minimal/No / Mild / Moderate /  Severe / Massive / Torrential ",
         "inputs": [
+          { "value": "Minimal/No (0)", "key": "0" },
           { "value": "Mild (1)", "key": "1" },
           { "value": "Moderate (2)", "key": "2" },
           { "value": "Severe (3)", "key": "3" },
@@ -1470,8 +1473,9 @@
         "list": "RVfunction",
         "name": "RVfunction",
         "type": "list",
-        "placeholder": " Select from a list:  Mildly impaired / Moderately impaired / Moderate to severe impaired / Severely impaired ",
+        "placeholder": " Select from a list: Normal / Mildly impaired / Moderately impaired / Moderate to severe impaired / Severely impaired ",
         "inputs": [
+          { "value": "Normal (0)", "key": "0" },
           { "value": "Mildly impaired (1)", "key": "1" },
           { "value": "Moderately impaired (2)", "key": "2" },
           { "value": "Moderate to severe impaired (3)", "key": "3" },
@@ -1485,8 +1489,9 @@
         "list": "RVdiameter",
         "name": "RVdiameter",
         "type": "list",
-        "placeholder": " Select from a list:  Mildly dilated / Moderatly dilated / Moderate to severe dilated / Severely dilated  ",
+        "placeholder": " Select from a list: Normal / Mildly dilated / Moderatly dilated / Moderate to severe dilated / Severely dilated  ",
         "inputs": [
+          { "value": "Normal (0)", "key": "0" },
           { "value": "Mildly dilated (1)", "key": "1" },
           { "value": "Moderatly dilated (2)", "key": "2" },
           { "value": "Moderate to severe dilated (3)", "key": "3" },
@@ -2306,13 +2311,13 @@
             "type": "radio",
             "name": "Packedcells",
             "value": "1",
-            "label": " Stable "
+            "label": " Given "
           },
           {
             "type": "radio",
             "name": "Packedcells",
             "value": "0",
-            "label": " Decreased "
+            "label": " Not given "
           }
         ]
       }
@@ -2727,13 +2732,12 @@
         "list": "mobility",
         "name": "mobility_clinical_follow_30",
         "type": "list",
-        "placeholder": " Select from a list:  No /  Walker / Cane / Wheelchair / Bedridden ",
+        "placeholder": " Select from a list:  Walker / Cane / Wheelchair / Bedridden ",
         "inputs": [
-          { "value": "No", "key": "o" },
-          { "value": "Walker", "key": "1" },
-          { "value": "Cane", "key": "2" },
-          { "value": "Wheelchair", "key": "3" },
-          { "value": "Bedridden", "key": "4" }
+          { "value": "Walker (1+)", "key": "1" },
+          { "value": "Cane (2+)", "key": "2" },
+          { "value": "Wheelchair (3+)", "key": "3" },
+          { "value": "Bedridden (4+)", "key": "4" }
         ]
       }
     },
@@ -3634,13 +3638,12 @@
         "list": "mobility",
         "name": "mobility_clinical_follow_365",
         "type": "list",
-        "placeholder": " Select from a list:  No /  Walker / Cane / Wheelchair / Bedridden ",
+        "placeholder": " Select from a list:  Walker / Cane / Wheelchair / Bedridden ",
         "inputs": [
-          { "value": "No", "key": "o" },
-          { "value": "Walker", "key": "1" },
-          { "value": "Cane", "key": "2" },
-          { "value": "Wheelchair", "key": "3" },
-          { "value": "Bedridden", "key": "4" }
+          { "value": "Walker (1+)", "key": "1" },
+          { "value": "Cane (2+)", "key": "2" },
+          { "value": "Wheelchair (3+)", "key": "3" },
+          { "value": "Bedridden (4+)", "key": "4" }
         ]
       }
     },
@@ -4541,13 +4544,12 @@
         "list": "mobility",
         "name": "mobility_clinical_follow_2_years",
         "type": "list",
-        "placeholder": " Select from a list:  No /  Walker / Cane / Wheelchair / Bedridden ",
+        "placeholder": " Select from a list:  Walker / Cane / Wheelchair / Bedridden ",
         "inputs": [
-          { "value": "No", "key": "o" },
-          { "value": "Walker", "key": "1" },
-          { "value": "Cane", "key": "2" },
-          { "value": "Wheelchair", "key": "3" },
-          { "value": "Bedridden", "key": "4" }
+          { "value": "Walker (1+)", "key": "1" },
+          { "value": "Cane (2+)", "key": "2" },
+          { "value": "Wheelchair (3+)", "key": "3" },
+          { "value": "Bedridden (4+)", "key": "4" }
         ]
       }
     },

@@ -89,10 +89,10 @@ export default class FormWrapper extends Component {
         <section>
           <StepWizard initialStep={1}>
             {this.state.steps.map(step => {
-              return (
+              return (       
                 <IMCRStep stepName={step}>
                   {this.getComponnetForStep(step)}
-                </IMCRStep>
+                </IMCRStep>  
               );
             })}
           </StepWizard>

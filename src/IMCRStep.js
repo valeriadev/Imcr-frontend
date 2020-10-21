@@ -20,32 +20,25 @@ export default class IMCRStep extends Component {
     e.preventDefault();
 
     try {
-      if (1 === 1) {
-        const allFieldsInStep = this.getFields()[this.props.stepName];
+      const allFieldsInStep = this.getFields()[this.props.stepName];
 
-        let doesHaveEmptyValue = false;
+      let doesHaveEmptyValue = false;
 
-        for (let i = 0; i < allFieldsInStep.length; i++) {
-          const keyName = Object.keys(allFieldsInStep[i])[0];
+      for (let i = 0; i < allFieldsInStep.length; i++) {
+        const keyName = Object.keys(allFieldsInStep[i])[0];
 
-          if (getByKey(allFieldsInStep[i][keyName].name) === "@@IMCR@@") {
-            doesHaveEmptyValue = true;
-            break;
-          }
+        if (getByKey(allFieldsInStep[i][keyName].name) === "@@IMCR@@") {
+          doesHaveEmptyValue = true;
+          break;
         }
+      }
 
-        if (doesHaveEmptyValue) {
-          const userResponse = window.confirm(
-            "Missing values, do you want to continue?"
-          );
-          if (userResponse) {
-            this.props.nextStep();
-          }
-        } else {
+      if (doesHaveEmptyValue) {
+        if (window.confirm("Missing values, do you want to continue?")) {
           this.props.nextStep();
         }
       } else {
-        console.log(1);
+        this.props.nextStep();
       }
     } catch (e) {
       console.error(e);
@@ -121,10 +114,10 @@ export default class IMCRStep extends Component {
         </nav>
         <div className="card1">
           <h3 style={{ margin: "1em" }}>{this.props.stepName}</h3>
-          <form class="step-form" ref={form => (this.form = form)}>
+          <form class="step-form" ref={(form) => (this.form = form)}>
             {this.props.children}
           </form>
-
+          {window.scrollTo(0, 0)}
           {this.props.currentStep > 1 ? (
             <button
               class="btn btn-info"
@@ -147,7 +140,10 @@ export default class IMCRStep extends Component {
             </button>
           ) : null}
 
-          {this.props.currentStep == 8 ||this.props.currentStep == 10 ||this.props.currentStep == 12 ||this.props.currentStep == 14 ||
+          {this.props.currentStep == 8 ||
+          this.props.currentStep == 10 ||
+          this.props.currentStep == 12 ||
+          this.props.currentStep == 14 ||
           this.props.stepName === "Procedure Data" ? (
             <SubmitRecord />
           ) : null}
@@ -156,9 +152,7 @@ export default class IMCRStep extends Component {
             <p class="text-center" style={{ "margin-top": ".5em" }}>
               {this.props.currentStep} / {this.props.totalSteps}
             </p>
-          ) : (
-            undefined
-          )}
+          ) : undefined}
         </div>
       </div>
     );
